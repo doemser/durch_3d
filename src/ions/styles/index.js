@@ -12,13 +12,13 @@ export const globalStyle = css`
 	}
 
 	body {
+		display: flex;
+		flex-direction: column;
 		min-height: 100vh;
 		margin: 0;
-		display: flex;
+		background: var(--primary-dark);
 		color: white;
 		font-size: 1rem;
-		flex-direction: column;
-		background: var(--primary-dark);
 	}
 
 	#__next {
