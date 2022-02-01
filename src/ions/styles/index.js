@@ -13,6 +13,15 @@ export const globalStyle = css`
 
 	body {
 		margin: 0;
+		min-height: 100vh;
 		font-size: 1rem;
+		color: white;
+		display: flex;
+		flex-direction: column;
+		background: var(--primary-dark);
+	}
+
+	#__next {
+		display: contents;
 	}
 `;

@@ -1,10 +1,11 @@
 import React from "react";
+import StyledFooter from "./styled";
 
 const Footer = () => {
 	return (
-		<footer>
-			<div>© 2022 by Me</div>
-		</footer>
+		<StyledFooter>
+			<div>© 2022 doemser</div>
+		</StyledFooter>
 	);
 };
 
