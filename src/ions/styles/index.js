@@ -12,11 +12,11 @@ export const globalStyle = css`
 	}
 
 	body {
-		margin: 0;
 		min-height: 100vh;
-		font-size: 1rem;
-		color: white;
+		margin: 0;
 		display: flex;
+		color: white;
+		font-size: 1rem;
 		flex-direction: column;
 		background: var(--primary-dark);
 	}

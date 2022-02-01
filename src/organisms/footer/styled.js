@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
 
-const StyledFooter = styled.main`
+const StyledFooter = styled.footer`
 	position: fixed;
 	bottom: 0;
-	width: 100%;
 	display: flex;
-	justify-content: center;
+	width: 100%;
 	align-items: center;
+	justify-content: center;
 	background: transparent;
 `;
 

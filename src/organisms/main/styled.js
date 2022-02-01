@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 
 const StyledMain = styled.main`
-	flex-grow: 1;
 	display: flex;
-	justify-content: center;
+	flex-grow: 1;
 	align-items: center;
+	justify-content: center;
 	background: var(--primary-main);
 `;
 

@@ -7,12 +7,12 @@ const StyledButton = styled.button`
 	border-radius: ${pxToRem(4)};
 	background: var(--primary-dark);
 	color: var(--primary-contrast-text);
-	font-size: 1em;
 	transition: background 0.3s;
+	font-size: 1em;
 
 	&:hover {
-		cursor: pointer;
 		background: var(--primary-main);
+		cursor: pointer;
 	}
 
 	&:active {

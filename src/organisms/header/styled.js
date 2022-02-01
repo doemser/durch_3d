@@ -1,13 +1,13 @@
 import styled from "@emotion/styled";
 
-const StyledHeader = styled.main`
+const StyledHeader = styled.header`
 	position: fixed;
 	top: 0;
 	width: 100%;
-	height: 30px;
 	display: flex;
-	justify-content: center;
+	height: 30px;
 	align-items: center;
+	justify-content: center;
 	background: transparent;
 `;
 
