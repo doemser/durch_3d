@@ -2,19 +2,21 @@ import styled from "@emotion/styled";
 import { pxToRem } from "../../ions/utils/unit";
 
 const StyledButton = styled.button`
-	padding: 0.5em 1em;
-	border: 1px solid rgba(0, 0, 0, 0.3);
+	padding: ${pxToRem(8)} ${pxToRem(16)};
+	transition: background 0.3s;
+	border: 1px solid var(--primary-contrast-text);
 	border-radius: ${pxToRem(4)};
-	background: #fae;
-	color: #000;
+	background: var(--primary-dark);
+	color: var(--primary-contrast-text);
 	font-size: 1em;
 
 	&:hover {
-		background: #d8b;
+		background: var(--primary-main);
+		cursor: pointer;
 	}
 
 	&:active {
-		background: #bad;
+		background: var(--primary-light);
 	}
 `;
 
