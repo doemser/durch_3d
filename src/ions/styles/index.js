@@ -16,9 +16,7 @@ export const globalStyle = css`
 		flex-direction: column;
 		min-height: 100vh;
 		margin: 0;
-
 		background: var(--black);
-
 		color: white;
 		font-size: 1rem;
 	}
