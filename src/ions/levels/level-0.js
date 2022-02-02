@@ -10,4 +10,36 @@ createLevel({
 		metalness: "0.5",
 		roughness: "0",
 	},
+	map: [
+		{
+			position: [0, -2.5, 0],
+			args: [30, 3, 3],
+			color: "#2f2f2f",
+			rotation: 0,
+		},
+		{
+			position: [0, 16.875, 0],
+			args: [30, 3, 3],
+			color: "#2f2f2f",
+			rotation: 0,
+		},
+		{
+			position: [-13.5, 6, 0],
+			args: [3, 19, 3],
+			color: "#2f2f2f",
+			rotation: 0,
+		},
+		{
+			position: [13.5, 6, 0],
+			args: [3, 19, 3],
+			color: "#2f2f2f",
+			rotation: 0,
+		},
+		{
+			position: [0, 7.5, -3],
+			args: [30, 20, 3],
+			color: "#FC427B",
+			rotation: 0,
+		},
+	],
 });
