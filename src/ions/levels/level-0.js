@@ -10,6 +10,13 @@ createLevel({
 		metalness: "0.5",
 		roughness: "0",
 	},
+	goal: {
+		position: [11.75, 7, 0],
+		args: [0.5, 2, 2],
+		color: colors.primaryLight,
+		metalness: "0.5",
+		roughness: "0",
+	},
 	map: [
 		{
 			position: [0, -2.5, 0],
