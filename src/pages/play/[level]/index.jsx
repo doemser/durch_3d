@@ -19,7 +19,6 @@ const Page = () => {
 		goToLevel(level);
 	}, [level]);
 
-
 	return (
 		<Layout>
 			<Head>
@@ -27,12 +26,10 @@ const Page = () => {
 				<meta key="description" name="description" content="start playing" />
 			</Head>
 
-
-			<Canvas shadows className="canvas">
+			<Canvas shadows className="canvas" camera={{ position: [0, 0, 25] }}>
 				<color attach="background" args={["black"]} />
 				<Level level={level} />
 			</Canvas>
-
 		</Layout>
 	);
 };
