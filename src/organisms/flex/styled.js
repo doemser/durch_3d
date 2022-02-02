@@ -1,11 +1,9 @@
 import styled from "@emotion/styled";
 
-const StyledFooter = styled.footer`
+export const StyledFlexFit = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: var(--footer-height);
+	height: 100%;
 `;
-
-export default StyledFooter;
