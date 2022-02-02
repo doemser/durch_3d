@@ -1,10 +1,7 @@
 import styled from "@emotion/styled";
 
 const StyledMain = styled.main`
-	display: flex;
-	flex-grow: 1;
-	align-items: center;
-	justify-content: center;
+	height: calc(100vh - var(--header-height) - var(--footer-height));
 	background: var(--primary-main);
 `;
 
