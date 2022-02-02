@@ -16,11 +16,13 @@ const Page = () => {
 					content="A little game about shooting through"
 				/>
 			</Head>
+
 			<StyledFlexFit>
 				<Link href="./play/0">
 					<Button>New Game</Button>
 				</Link>
 			</StyledFlexFit>
+
 		</Layout>
 	);
 };

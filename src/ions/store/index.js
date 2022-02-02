@@ -1,5 +1,6 @@
 import create from "zustand";
 
+
 const useStore = create(set => {
 	return {
 		level: 0,
@@ -10,5 +11,6 @@ const useStore = create(set => {
 		},
 	};
 });
+
 
 export default useStore;

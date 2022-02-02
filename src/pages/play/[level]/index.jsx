@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import React, { useEffect } from "react";
 import Layout from "../../../organisms/layout";
 import { useRouter } from "next/router";
@@ -18,6 +19,7 @@ const Page = () => {
 		goToLevel(level);
 	}, [level]);
 
+
 	return (
 		<Layout>
 			<Head>
@@ -25,10 +27,12 @@ const Page = () => {
 				<meta key="description" name="description" content="start playing" />
 			</Head>
 
+
 			<Canvas shadows className="canvas">
 				<color attach="background" args={["black"]} />
 				<Level level={level} />
 			</Canvas>
+
 		</Layout>
 	);
 };
