@@ -3,9 +3,9 @@ import React from "react";
 const Map = ({ map }) => {
 	return (
 		<>
-			{map.map((map, index) => {
+			{map.map(map => {
 				return (
-					<mesh key={index} receiveShadow castShadow position={map.position}>
+					<mesh key={map.id} receiveShadow castShadow position={map.position}>
 						<boxGeometry args={map.args} />
 						<meshStandardMaterial
 							color={map.color}
