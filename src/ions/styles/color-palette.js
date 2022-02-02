@@ -12,8 +12,6 @@ export const colors = {
 
 export const colorPalette = css`
 	:root {
-		--header-height: 30px;
-		--footer-height: 30px;
 		--black: ${colors.black};
 		--white: ${colors.white};
 		--primary-light: ${colors.primaryLight};
