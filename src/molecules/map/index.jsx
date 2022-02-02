@@ -7,7 +7,11 @@ const Map = ({ map }) => {
 				return (
 					<mesh key={index} receiveShadow castShadow position={map.position}>
 						<boxGeometry args={map.args} />
-						<meshStandardMaterial color={map.color} metalness=".3" roughness="0.5" />
+						<meshStandardMaterial
+							color={map.color}
+							metalness={map.metalness}
+							roughness={map.roughness}
+						/>
 					</mesh>
 				);
 			})}
