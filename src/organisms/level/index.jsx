@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { OrbitControls } from "@react-three/drei";
 import Player from "../../atoms/player";
 import levels from "../../ions/levels";

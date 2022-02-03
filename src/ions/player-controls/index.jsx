@@ -7,13 +7,11 @@ const PlayerControls = ({ moveUp }) => {
 		const handleKeyUp = ({ code }) => {
 			if (code === "Space") {
 				changeMove(false);
-				console.log(moveUp);
 			}
 		};
 		const handleKeyDown = ({ code }) => {
 			if (code === "Space") {
 				changeMove(true);
-				console.log(moveUp);
 			}
 		};
 
