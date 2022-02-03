@@ -16,9 +16,9 @@ const Level = ({ level }) => {
 		<group>
 			<Lights />
 			<OrbitControls />
-			<PlayerControls moveUp={moveUp} />
 			<Map map={currentLevel.map} />
-			<Player {...currentLevel.player} />
+			<PlayerControls moveUp={moveUp} />
+			<Player moveUp={moveUp} {...currentLevel.player} />
 			<Goal {...currentLevel.goal} />
 		</group>
 	);

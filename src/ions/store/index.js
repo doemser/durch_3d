@@ -10,10 +10,10 @@ const useStore = create(set => {
 			}));
 		},
 		moveUp: false,
-		changeMove: () => {
+		changeMove: bool => {
 			set(
 				produce(state => {
-					state.moveUp = !state.moveUp;
+					state.moveUp = bool;
 				})
 			);
 		},

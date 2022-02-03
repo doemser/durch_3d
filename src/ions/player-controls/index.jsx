@@ -6,13 +6,13 @@ const PlayerControls = ({ moveUp }) => {
 		const changeMove = useStore.getState().changeMove;
 		const handleKeyUp = ({ code }) => {
 			if (code === "Space") {
-				changeMove();
+				changeMove(false);
 				console.log(moveUp);
 			}
 		};
 		const handleKeyDown = ({ code }) => {
 			if (code === "Space") {
-				changeMove();
+				changeMove(true);
 				console.log(moveUp);
 			}
 		};
