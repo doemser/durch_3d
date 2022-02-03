@@ -5,7 +5,7 @@ createLevel({
 	player: {
 		position: [-10, 4.5, 0],
 		args: [0.5, 1.5, 4],
-		color: colors.primaryLight,
+		color: colors.primaryDark,
 		speed: 0.09,
 		rotateUp: [0, 0, -0.785398],
 		rotateDown: [0, 0, -2.35619],
