@@ -11,7 +11,7 @@ const Goal = ({ position, args, color, metalness, roughness }) => {
 	useFrame(() => {
 		goal.current.rotation.x += 0.02;
 	});
-	//Physics;
+	//Physics
 	const [ref] = useBox(() => ({
 		type: "Kinematic",
 		args: args,
