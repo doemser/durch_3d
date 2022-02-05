@@ -17,6 +17,12 @@ const useStore = create(set => {
 				})
 			);
 		},
+		playerId: null,
+		setPlayerId: playerId => {
+			set({
+				playerId,
+			});
+		},
 	};
 });
 

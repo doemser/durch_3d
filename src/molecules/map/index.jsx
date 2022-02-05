@@ -1,19 +1,36 @@
 import React from "react";
+import { useBox } from "@react-three/cannon";
+import useStore from "../../ions/store";
+
+const Box = ({ obstacle }) => {
+	const [ref] = useBox(() => ({
+		type: "Kinematic",
+		args: obstacle.args,
+		position: obstacle.position,
+		onCollideBegin: event_ => {
+			const playerId = useStore.getState().playerId;
+			if (event_.body.uuid === playerId) {
+				console.log("game over");
+			}
+		},
+	}));
+	return (
+		<mesh ref={ref} receiveShadow castShadow position={obstacle.position}>
+			<boxGeometry args={obstacle.args} />
+			<meshStandardMaterial
+				color={obstacle.color}
+				metalness={obstacle.metalness}
+				roughness={obstacle.roughness}
+			/>
+		</mesh>
+	);
+};
 
 const Map = ({ map }) => {
 	return (
 		<>
-			{map.map(map => {
-				return (
-					<mesh key={map.id} receiveShadow castShadow position={map.position}>
-						<boxGeometry args={map.args} />
-						<meshStandardMaterial
-							color={map.color}
-							metalness={map.metalness}
-							roughness={map.roughness}
-						/>
-					</mesh>
-				);
+			{map.map(obstacle => {
+				return <Box key={obstacle.id} obstacle={obstacle} />;
 			})}
 		</>
 	);

@@ -1,5 +1,6 @@
 import React from "react";
 import { OrbitControls } from "@react-three/drei";
+import { Physics } from "@react-three/cannon";
 import Player from "../../atoms/player";
 import levels from "../../ions/levels";
 import Lights from "../../molecules/lights";
@@ -16,10 +17,12 @@ const Level = ({ level }) => {
 		<group>
 			<Lights />
 			<OrbitControls />
-			<Map map={currentLevel.map} />
-			<PlayerControls moveUp={moveUp} />
-			<Player moveUp={moveUp} {...currentLevel.player} />
-			<Goal {...currentLevel.goal} />
+			<Physics>
+				<Map map={currentLevel.map} />
+				<PlayerControls moveUp={moveUp} />
+				<Player moveUp={moveUp} {...currentLevel.player} />
+				<Goal {...currentLevel.goal} />
+			</Physics>
 		</group>
 	);
 };
