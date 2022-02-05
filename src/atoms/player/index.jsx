@@ -1,24 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import useStore from "../../ions/store";
-import {
-	useBox,
-	useConeTwistConstraint,
-	useConvexPolyhedron,
-	useSphere,
-} from "@react-three/cannon";
+import { useSphere } from "@react-three/cannon";
 
-const Player = ({
-	position,
-	args,
-	speed,
-	color,
-	rotateUp,
-	rotateDown,
-	metalness,
-	roughness,
-	moveUp,
-}) => {
+const Player = ({ position, args, speed, color, metalness, roughness, moveUp }) => {
 	//Physics;
 	const [ref, api] = useSphere(() => ({
 		mass: 10,
@@ -42,7 +27,6 @@ const Player = ({
 	});
 
 	useEffect(() => {
-		console.log("---->", ref.current.uuid);
 		useStore.getState().setPlayerId(ref.current.uuid);
 	}, [ref]);
 
@@ -58,23 +42,3 @@ const Player = ({
 };
 
 export default Player;
-
-/*
-* onFrame={(clock) => {
-							return {
-								position: [
-									Math.sin(clock.getElapsedTime()) * 4,
-									-2,
-									0,
-								],
-								rotation: [
-									0,
-									Math.cos(clock.getElapsedTime() * 10) *
-										degToRad(20),
-									Math.sin(clock.getElapsedTime() * 10) *
-										degToRad(20),
-								],
-							};
-						}}
-*
-* */
