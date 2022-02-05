@@ -1,6 +1,8 @@
 import React from "react";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
+import { useBox } from "@react-three/cannon";
+import useStore from "../../ions/store";
 
 const Goal = ({ position, args, color, metalness, roughness }) => {
 	//For Animation
@@ -8,12 +10,26 @@ const Goal = ({ position, args, color, metalness, roughness }) => {
 	useFrame(() => {
 		goal.current.rotation.x += 0.02;
 	});
+	//Physics;
+	const [ref] = useBox(() => ({
+		type: "Kinematic",
+		args: args,
+		position: position,
+		onCollideBegin: event_ => {
+			const playerId = useStore.getState().playerId;
+			if (event_.body.uuid === playerId) {
+				console.log("win");
+			}
+		},
+	}));
 
 	return (
-		<mesh ref={goal} receiveShadow castShadow position={position}>
-			<boxBufferGeometry args={args} />
-			<meshStandardMaterial color={color} metalness={metalness} roughness={roughness} />
-		</mesh>
+		<group ref={ref} position={position}>
+			<mesh ref={goal} receiveShadow castShadow>
+				<boxBufferGeometry args={args} />
+				<meshStandardMaterial color={color} metalness={metalness} roughness={roughness} />
+			</mesh>
+		</group>
 	);
 };
 
