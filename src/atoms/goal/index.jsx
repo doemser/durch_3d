@@ -5,6 +5,7 @@ import { useBox } from "@react-three/cannon";
 import useStore from "../../ions/store";
 
 const Goal = ({ position, args, color, metalness, roughness }) => {
+	const setWin = useStore(state => state.setWin);
 	//For Animation
 	const goal = useRef();
 	useFrame(() => {
@@ -19,6 +20,7 @@ const Goal = ({ position, args, color, metalness, roughness }) => {
 			const playerId = useStore.getState().playerId;
 			if (event_.body.uuid === playerId) {
 				console.log("win");
+				setWin(true);
 			}
 		},
 	}));

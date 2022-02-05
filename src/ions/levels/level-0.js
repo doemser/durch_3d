@@ -15,7 +15,7 @@ createLevel({
 	goal: {
 		position: [11.75, 7, 0],
 		args: [0.5, 2, 2],
-		color: colors.primaryLight,
+		color: "green",
 		metalness: "0.5",
 		roughness: "0",
 	},
@@ -64,6 +64,15 @@ createLevel({
 			metalness: "0.3",
 			roughness: "0.5",
 			id: "1ab39890-3ebb-4ba8-af82-310497158718",
+		},
+		{
+			position: [0, 11, 0],
+			args: [5, 10, 3],
+			color: colors.primaryDark,
+			rotation: 0,
+			metalness: "0.3",
+			roughness: "0.5",
+			id: "953c0783-13f5-4a1e-9ba7-547de6e2084d",
 		},
 	],
 });

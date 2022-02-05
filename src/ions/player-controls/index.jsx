@@ -4,14 +4,15 @@ import { useEffect } from "react";
 const PlayerControls = ({ moveUp }) => {
 	useEffect(() => {
 		const changeMove = useStore.getState().changeMove;
+
 		const handleKeyUp = ({ code }) => {
 			if (code === "Space") {
-				changeMove(false);
+				changeMove(true);
 			}
 		};
 		const handleKeyDown = ({ code }) => {
 			if (code === "Space") {
-				changeMove(true);
+				changeMove(false);
 			}
 		};
 
