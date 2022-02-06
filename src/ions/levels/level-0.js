@@ -6,7 +6,7 @@ createLevel({
 		position: [-10, 4.5, 0],
 		args: [0.5, 64, 64],
 		color: "red",
-		speed: 0.09,
+		speed: 0.15,
 		rotateUp: [0, 0, -0.785398],
 		rotateDown: [0, 0, -2.35619],
 		metalness: "0.5",

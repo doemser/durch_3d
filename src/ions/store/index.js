@@ -8,6 +8,11 @@ const useStore = create(set => {
 			set(
 				produce(state => {
 					state.run = bool;
+					if (bool) {
+						state.lose = false;
+						state.win = false;
+						state.direction = -1;
+					}
 				})
 			);
 		},
@@ -16,6 +21,10 @@ const useStore = create(set => {
 			set(
 				produce(state => {
 					state.win = bool;
+					if (bool) {
+						state.run = false;
+						state.lose = false;
+					}
 				})
 			);
 		},
@@ -24,6 +33,10 @@ const useStore = create(set => {
 			set(
 				produce(state => {
 					state.lose = bool;
+					if (bool) {
+						state.run = false;
+						state.win = false;
+					}
 				})
 			);
 		},
@@ -33,13 +46,11 @@ const useStore = create(set => {
 				level,
 			}));
 		},
-		moveUp: false,
-		changeMove: bool => {
-			set(
-				produce(state => {
-					state.moveUp = bool;
-				})
-			);
+		direction: -1,
+		changeDirection: direction => {
+			set(state => ({
+				direction: typeof direction === "undefined" ? state.direction * -1 : direction,
+			}));
 		},
 		playerId: null,
 		setPlayerId: playerId => {

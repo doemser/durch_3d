@@ -13,7 +13,6 @@ import Texts from "../../molecules/texts";
 
 const Level = ({ level }) => {
 	const currentLevel = levels[Number.parseInt(level)];
-	const moveUp = useStore(state => state.moveUp);
 	const run = useStore(state => state.run);
 	const win = useStore(state => state.win);
 	const lose = useStore(state => state.lose);
@@ -23,14 +22,10 @@ const Level = ({ level }) => {
 			<Lights />
 			<OrbitControls />
 			<Texts run={run} win={win} lose={lose} />
-			<Physics>
+			<Physics gravity={[0, -40, 0]}>
 				<Map map={currentLevel.map} />
-				{run ? (
-					<PlayerControls run={run} moveUp={moveUp} />
-				) : (
-					<UiControls run={run} moveUp={moveUp} />
-				)}
-				<Player moveUp={moveUp} run={run} win={win} lose={lose} {...currentLevel.player} />
+				{run ? <PlayerControls /> : <UiControls />}
+				<Player {...currentLevel.player} />
 				<Goal {...currentLevel.goal} />
 			</Physics>
 		</group>

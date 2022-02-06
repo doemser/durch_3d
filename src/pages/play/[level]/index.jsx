@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { Canvas } from "@react-three/fiber";
 import Level from "../../../organisms/level";
 import useStore from "../../../ions/store";
+import DebugPanel from "../../../molecules/debug/texts";
 
 const Page = () => {
 	// Gets current URL-ending
@@ -25,7 +26,7 @@ const Page = () => {
 				<title key="title">play</title>
 				<meta key="description" name="description" content="start playing" />
 			</Head>
-
+			<DebugPanel />
 			<Canvas shadows className="canvas" camera={{ position: [0, 0, 25] }}>
 				<color attach="background" args={["black"]} />
 				<Level level={level} />
