@@ -3,10 +3,8 @@ import useStore from "../../../ions/store";
 
 const DebugPanel = () => {
 	const level = useStore(state => state.level);
-	const run = useStore(state => state.run);
-	const win = useStore(state => state.win);
-	const lose = useStore(state => state.lose);
 	const direction = useStore(state => state.direction);
+	const gameState = useStore(state => state.gameState);
 	return (
 		<div
 			style={{
@@ -21,20 +19,14 @@ const DebugPanel = () => {
 				background: "black",
 			}}
 		>
-			GAME
+			GAMESTATE
 			<br />
-			<br />
-			level: {level}
-			<br />
-			run: {run ? "true" : "false"}
-			<br />
-			win: {win ? "true" : "false"}
-			<br />
-			lose: {lose ? "true" : "false"}
+			{gameState}
 			<br />
 			<br />
 			PLAYER
 			<br />
+			level: {level}
 			<br />
 			moves: {direction > 0 ? "up" : "down"}
 		</div>

@@ -1,7 +1,7 @@
 import { Text } from "@react-three/drei";
 import React from "react";
 
-const Texts = ({ run, win, lose }) => {
+const Texts = ({ gameState }) => {
 	return (
 		<>
 			<Text
@@ -13,7 +13,7 @@ const Texts = ({ run, win, lose }) => {
 				fontSize={2}
 				color="black"
 			>
-				{win ? "you win!" : lose ? "you lose" : ""}
+				{gameState === "win" ? "you win!" : gameState === "lose" ? "you lose" : ""}
 			</Text>
 			<Text
 				castShadow
@@ -24,11 +24,11 @@ const Texts = ({ run, win, lose }) => {
 				fontSize={1}
 				color="black"
 			>
-				{run && !win && !lose
+				{gameState === "running"
 					? "hit goal, not wall"
-					: !run && win && !lose
+					: gameState === "win"
 					? "you did that really good"
-					: !run && !win && lose
+					: gameState === "lose"
 					? "is that all you got?"
 					: "press spacebar to start and play"}
 			</Text>

@@ -3,15 +3,13 @@ import { useEffect } from "react";
 
 const UiControls = () => {
 	useEffect(() => {
-		const run = useStore.getState().run;
-		const win = useStore.getState().win;
-		const lose = useStore.getState().lose;
-		const setRun = useStore.getState().setRun;
+		const gameState = useStore.getState().gameState;
+		const setGameState = useStore.getState().setGameState;
 
 		const handleKeyDown = ({ code }) => {
 			if (code === "Space") {
-				if (lose || (!run && !win)) {
-					setRun(true);
+				if (gameState === "waiting" || gameState === "lose") {
+					setGameState("running");
 				}
 			}
 		};

@@ -5,7 +5,7 @@ import { useBox } from "@react-three/cannon";
 import useStore from "../../ions/store";
 
 const Goal = ({ position, args, color, metalness, roughness }) => {
-	const setWin = useStore(state => state.setWin);
+	const setGameState = useStore(state => state.setGameState);
 
 	//Physics
 	const [ref, api] = useBox(() => ({
@@ -17,7 +17,7 @@ const Goal = ({ position, args, color, metalness, roughness }) => {
 			const playerId = useStore.getState().playerId;
 			if (event_.body.uuid === playerId) {
 				console.log("win");
-				setWin(true);
+				setGameState("win");
 			}
 		},
 	}));

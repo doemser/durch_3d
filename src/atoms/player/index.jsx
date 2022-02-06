@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import useStore from "../../ions/store";
 import { useSphere } from "@react-three/cannon";
-import { PerspectiveCamera } from "@react-three/drei";
 
 const Player = ({ position, args, speed, color, metalness, roughness }) => {
 	//Physics;
@@ -20,12 +19,11 @@ const Player = ({ position, args, speed, color, metalness, roughness }) => {
 	}, []);
 
 	useFrame(() => {
-		const run = useStore.getState().run;
-		const lose = useStore.getState().lose;
 		const direction = useStore.getState().direction;
-		if (lose) {
+		const gameState = useStore.getState().gameState;
+		if (gameState === "lose") {
 			api.position.set(position[0], position[1], position[2]);
-		} else if (run) {
+		} else if (gameState === "running") {
 			api.position.set(
 				playerPosition.current[0] + speed,
 				playerPosition.current[1] + direction * speed,

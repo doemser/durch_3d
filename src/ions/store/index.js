@@ -8,42 +8,8 @@ const useStore = create(set => {
 			set(
 				produce(state => {
 					state.gameState = gameState;
-				})
-			);
-		},
-		run: false,
-		setRun: bool => {
-			set(
-				produce(state => {
-					state.run = bool;
-					if (bool) {
-						state.lose = false;
-						state.win = false;
+					if (gameState === "running") {
 						state.direction = -1;
-					}
-				})
-			);
-		},
-		win: false,
-		setWin: bool => {
-			set(
-				produce(state => {
-					state.win = bool;
-					if (bool) {
-						state.run = false;
-						state.lose = false;
-					}
-				})
-			);
-		},
-		lose: false,
-		setLose: bool => {
-			set(
-				produce(state => {
-					state.lose = bool;
-					if (bool) {
-						state.run = false;
-						state.win = false;
 					}
 				})
 			);
