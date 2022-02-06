@@ -22,14 +22,14 @@ const Player = ({ position, args, speed, color, metalness, roughness }) => {
 		const run = useStore.getState().run;
 		const lose = useStore.getState().lose;
 		const direction = useStore.getState().direction;
-		if (run) {
+		if (lose) {
+			api.position.set(position[0], position[1], position[2]);
+		} else if (run) {
 			api.position.set(
 				playerPosition.current[0] + speed,
 				playerPosition.current[1] + direction * speed,
 				0
 			);
-		} else if (lose) {
-			api.position.set(position[0], position[1], position[2]);
 		}
 	});
 

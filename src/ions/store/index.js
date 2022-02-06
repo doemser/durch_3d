@@ -10,6 +10,7 @@ const useStore = create(set => {
 					state.run = bool;
 					if (bool) {
 						state.lose = false;
+						state.win = false;
 						state.direction = -1;
 					}
 				})
@@ -22,6 +23,7 @@ const useStore = create(set => {
 					state.win = bool;
 					if (bool) {
 						state.run = false;
+						state.lose = false;
 					}
 				})
 			);
@@ -33,6 +35,7 @@ const useStore = create(set => {
 					state.lose = bool;
 					if (bool) {
 						state.run = false;
+						state.win = false;
 					}
 				})
 			);
