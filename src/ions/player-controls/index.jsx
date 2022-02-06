@@ -1,18 +1,18 @@
 import useStore from "../store";
 import { useEffect } from "react";
 
-const PlayerControls = ({ moveUp }) => {
+const PlayerControls = () => {
 	useEffect(() => {
-		const changeMove = useStore.getState().changeMove;
+		const changeDirection = useStore.getState().changeDirection;
 
 		const handleKeyUp = ({ code }) => {
 			if (code === "Space") {
-				changeMove(true);
+				changeDirection(1);
 			}
 		};
 		const handleKeyDown = ({ code }) => {
 			if (code === "Space") {
-				changeMove(false);
+				changeDirection(-1);
 			}
 		};
 
@@ -22,7 +22,7 @@ const PlayerControls = ({ moveUp }) => {
 			window.removeEventListener("keydown", handleKeyDown);
 			window.removeEventListener("keyup", handleKeyUp);
 		};
-	}, [moveUp]);
+	}, []);
 
 	return null;
 };

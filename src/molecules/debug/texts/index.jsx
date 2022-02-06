@@ -1,4 +1,3 @@
-import { Text } from "@react-three/drei";
 import React from "react";
 import useStore from "../../../ions/store";
 
@@ -7,7 +6,7 @@ const DebugPanel = () => {
 	const run = useStore(state => state.run);
 	const win = useStore(state => state.win);
 	const lose = useStore(state => state.lose);
-	const moveUp = useStore(state => state.moveUp);
+	const direction = useStore(state => state.direction);
 	return (
 		<div
 			style={{
@@ -37,7 +36,7 @@ const DebugPanel = () => {
 			PLAYER
 			<br />
 			<br />
-			moves: {moveUp ? "up" : "down"}
+			moves: {direction > 0 ? "up" : "down"}
 		</div>
 	);
 };

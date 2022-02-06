@@ -1,13 +1,21 @@
 import useStore from "../store";
 import { useEffect } from "react";
 
-const UiControls = ({ run, win, lose }) => {
+const UiControls = () => {
 	useEffect(() => {
+		const run = useStore.getState().run;
+		const lose = useStore.getState().lose;
 		const setRun = useStore.getState().setRun;
+		const setLose = useStore.getState().setLose;
+		const changeDirection = useStore.getState().changeDirection;
 
 		const handleKeyUp = ({ code }) => {
 			if (code === "Space") {
-				if (!run && !win && !lose) {
+				if (lose) {
+					setRun(true);
+					setLose(false);
+					changeDirection(-1);
+				} else if (!run) {
 					setRun(true);
 				}
 			}
@@ -17,7 +25,7 @@ const UiControls = ({ run, win, lose }) => {
 		return () => {
 			window.removeEventListener("keydown", handleKeyUp);
 		};
-	}, [run]);
+	}, []);
 
 	return null;
 };

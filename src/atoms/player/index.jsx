@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import useStore from "../../ions/store";
 import { useSphere } from "@react-three/cannon";
 
-const Player = ({ run, win, lose, position, args, speed, color, metalness, roughness, moveUp }) => {
+const Player = ({ position, args, speed, color, metalness, roughness }) => {
 	//Physics;
 	const [ref, api] = useSphere(() => ({
 		mass: 10,
@@ -19,12 +19,17 @@ const Player = ({ run, win, lose, position, args, speed, color, metalness, rough
 	}, []);
 
 	useFrame(() => {
-		if (run && !win && !lose) {
+		const run = useStore.getState().run;
+		const lose = useStore.getState().lose;
+		const direction = useStore.getState().direction;
+		if (run) {
 			api.position.set(
 				playerPosition.current[0] + speed,
-				playerPosition.current[1] + (moveUp ? speed : -speed),
+				playerPosition.current[1] + direction * speed,
 				0
 			);
+		} else if (lose) {
+			api.position.set(position[0], position[1], position[2]);
 		}
 	});
 
