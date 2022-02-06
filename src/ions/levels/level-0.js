@@ -13,7 +13,7 @@ createLevel({
 		roughness: "0",
 	},
 	goal: {
-		position: [11.75, 7, 0],
+		position: [11.75, 10, 0],
 		args: [0.5, 2, 2],
 		color: "green",
 		metalness: "0.5",

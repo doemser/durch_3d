@@ -3,22 +3,20 @@ import { useEffect } from "react";
 
 const UiControls = () => {
 	useEffect(() => {
-		const run = useStore.getState().run;
-		const win = useStore.getState().win;
-		const lose = useStore.getState().lose;
-		const setRun = useStore.getState().setRun;
+		const gameState = useStore.getState().gameState;
+		const setGameState = useStore.getState().setGameState;
 
-		const handleKeyUp = ({ code }) => {
+		const handleKeyDown = ({ code }) => {
 			if (code === "Space") {
-				if (lose || (!run && !win)) {
-					setRun(true);
+				if (gameState === "waiting" || gameState === "lose") {
+					setGameState("running");
 				}
 			}
 		};
 
-		window.addEventListener("keydown", handleKeyUp);
+		window.addEventListener("keydown", handleKeyDown);
 		return () => {
-			window.removeEventListener("keydown", handleKeyUp);
+			window.removeEventListener("keydown", handleKeyDown);
 		};
 	}, []);
 

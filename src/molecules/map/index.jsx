@@ -1,20 +1,11 @@
 import React from "react";
 import { useBox } from "@react-three/cannon";
-import useStore from "../../ions/store";
 
 const Box = ({ obstacle }) => {
-	const setLose = useStore(state => state.setLose);
 	const [ref] = useBox(() => ({
 		type: "Kinematic",
 		args: obstacle.args,
 		position: obstacle.position,
-		onCollideBegin: event_ => {
-			const playerId = useStore.getState().playerId;
-			if (event_.body.uuid === playerId) {
-				console.log("game over");
-				setLose(true);
-			}
-		},
 	}));
 	return (
 		<mesh ref={ref} receiveShadow castShadow position={obstacle.position}>

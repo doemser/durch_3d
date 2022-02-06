@@ -4,12 +4,23 @@ import useStore from "../../ions/store";
 import { useSphere } from "@react-three/cannon";
 
 const Player = ({ position, args, speed, color, metalness, roughness }) => {
+	const setGameState = useStore.getState().setGameState;
 	//Physics;
 	const [ref, api] = useSphere(() => ({
 		mass: 10,
 		args: args,
 		type: "Static",
 		position: position,
+		onCollideBegin: event_ => {
+			const goalId = useStore.getState().goalId;
+			if (event_.body.uuid === goalId) {
+				console.log("win");
+				setGameState("win");
+			} else {
+				console.log("lose");
+				setGameState("lose");
+			}
+		},
 	}));
 
 	const playerPosition = useRef(position);
@@ -19,12 +30,11 @@ const Player = ({ position, args, speed, color, metalness, roughness }) => {
 	}, []);
 
 	useFrame(() => {
-		const run = useStore.getState().run;
-		const lose = useStore.getState().lose;
 		const direction = useStore.getState().direction;
-		if (lose) {
+		const gameState = useStore.getState().gameState;
+		if (gameState === "lose") {
 			api.position.set(position[0], position[1], position[2]);
-		} else if (run) {
+		} else if (gameState === "running") {
 			api.position.set(
 				playerPosition.current[0] + speed,
 				playerPosition.current[1] + direction * speed,
@@ -33,18 +43,11 @@ const Player = ({ position, args, speed, color, metalness, roughness }) => {
 		}
 	});
 
-	useEffect(() => {
-		useStore.getState().setPlayerId(ref.current.uuid);
-	}, [ref]);
-
 	return (
-		<>
-			<mesh ref={ref} castShadow receiveShadow>
-				<sphereBufferGeometry args={args} />
-				<meshStandardMaterial color={color} metalness={metalness} roughness={roughness} />
-			</mesh>
-			);
-		</>
+		<mesh ref={ref} castShadow receiveShadow>
+			<sphereBufferGeometry args={args} />
+			<meshStandardMaterial color={color} metalness={metalness} roughness={roughness} />
+		</mesh>
 	);
 };
 

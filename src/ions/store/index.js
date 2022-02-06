@@ -3,39 +3,13 @@ import produce from "immer";
 
 const useStore = create(set => {
 	return {
-		run: false,
-		setRun: bool => {
+		gameState: "waiting",
+		setGameState: gameState => {
 			set(
 				produce(state => {
-					state.run = bool;
-					if (bool) {
-						state.lose = false;
-						state.win = false;
+					state.gameState = gameState;
+					if (gameState === "running") {
 						state.direction = -1;
-					}
-				})
-			);
-		},
-		win: false,
-		setWin: bool => {
-			set(
-				produce(state => {
-					state.win = bool;
-					if (bool) {
-						state.run = false;
-						state.lose = false;
-					}
-				})
-			);
-		},
-		lose: false,
-		setLose: bool => {
-			set(
-				produce(state => {
-					state.lose = bool;
-					if (bool) {
-						state.run = false;
-						state.win = false;
 					}
 				})
 			);
@@ -52,10 +26,10 @@ const useStore = create(set => {
 				direction: typeof direction === "undefined" ? state.direction * -1 : direction,
 			}));
 		},
-		playerId: null,
-		setPlayerId: playerId => {
+		goalId: null,
+		setGoalId: goalId => {
 			set({
-				playerId,
+				goalId,
 			});
 		},
 	};
