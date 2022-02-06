@@ -8,7 +8,7 @@ const UiControls = () => {
 		const lose = useStore.getState().lose;
 		const setRun = useStore.getState().setRun;
 
-		const handleKeyUp = ({ code }) => {
+		const handleKeyDown = ({ code }) => {
 			if (code === "Space") {
 				if (lose || (!run && !win)) {
 					setRun(true);
@@ -16,9 +16,9 @@ const UiControls = () => {
 			}
 		};
 
-		window.addEventListener("keydown", handleKeyUp);
+		window.addEventListener("keydown", handleKeyDown);
 		return () => {
-			window.removeEventListener("keydown", handleKeyUp);
+			window.removeEventListener("keydown", handleKeyDown);
 		};
 	}, []);
 

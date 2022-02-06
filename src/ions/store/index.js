@@ -3,6 +3,14 @@ import produce from "immer";
 
 const useStore = create(set => {
 	return {
+		gameState: "waiting",
+		setGameState: gameState => {
+			set(
+				produce(state => {
+					state.gameState = gameState;
+				})
+			);
+		},
 		run: false,
 		setRun: bool => {
 			set(

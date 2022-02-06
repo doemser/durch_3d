@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import useStore from "../../ions/store";
 import { useSphere } from "@react-three/cannon";
+import { PerspectiveCamera } from "@react-three/drei";
 
 const Player = ({ position, args, speed, color, metalness, roughness }) => {
 	//Physics;
@@ -38,13 +39,10 @@ const Player = ({ position, args, speed, color, metalness, roughness }) => {
 	}, [ref]);
 
 	return (
-		<>
-			<mesh ref={ref} castShadow receiveShadow>
-				<sphereBufferGeometry args={args} />
-				<meshStandardMaterial color={color} metalness={metalness} roughness={roughness} />
-			</mesh>
-			);
-		</>
+		<mesh ref={ref} castShadow receiveShadow>
+			<sphereBufferGeometry args={args} />
+			<meshStandardMaterial color={color} metalness={metalness} roughness={roughness} />
+		</mesh>
 	);
 };
 
