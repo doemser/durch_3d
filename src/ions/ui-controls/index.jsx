@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 const UiControls = () => {
 	useEffect(() => {
+		const level = useStore.getState().level;
 		const gameState = useStore.getState().gameState;
 		const setGameState = useStore.getState().setGameState;
 
@@ -10,6 +11,10 @@ const UiControls = () => {
 			if (code === "Space") {
 				if (gameState === "waiting" || gameState === "lose") {
 					setGameState("running");
+				}
+			} else if (code === "Enter") {
+				if (gameState === "win") {
+					window.location = `./${Number.parseInt(level) + 1}`;
 				}
 			}
 		};
