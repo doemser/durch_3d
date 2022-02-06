@@ -4,12 +4,23 @@ import useStore from "../../ions/store";
 import { useSphere } from "@react-three/cannon";
 
 const Player = ({ position, args, speed, color, metalness, roughness }) => {
+	const setGameState = useStore.getState().setGameState;
 	//Physics;
 	const [ref, api] = useSphere(() => ({
 		mass: 10,
 		args: args,
 		type: "Static",
 		position: position,
+		onCollideBegin: event_ => {
+			const goalId = useStore.getState().goalId;
+			if (event_.body.uuid === goalId) {
+				console.log("win");
+				setGameState("win");
+			} else {
+				console.log("lose");
+				setGameState("lose");
+			}
+		},
 	}));
 
 	const playerPosition = useRef(position);
@@ -31,10 +42,6 @@ const Player = ({ position, args, speed, color, metalness, roughness }) => {
 			);
 		}
 	});
-
-	useEffect(() => {
-		useStore.getState().setPlayerId(ref.current.uuid);
-	}, [ref]);
 
 	return (
 		<mesh ref={ref} castShadow receiveShadow>

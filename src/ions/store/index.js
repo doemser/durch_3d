@@ -26,10 +26,10 @@ const useStore = create(set => {
 				direction: typeof direction === "undefined" ? state.direction * -1 : direction,
 			}));
 		},
-		playerId: null,
-		setPlayerId: playerId => {
+		goalId: null,
+		setGoalId: goalId => {
 			set({
-				playerId,
+				goalId,
 			});
 		},
 	};
