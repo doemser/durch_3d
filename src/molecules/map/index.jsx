@@ -3,6 +3,7 @@ import { useBox } from "@react-three/cannon";
 import useStore from "../../ions/store";
 
 const Box = ({ obstacle }) => {
+	const setRun = useStore(state => state.setRun);
 	const setLose = useStore(state => state.setLose);
 	const [ref] = useBox(() => ({
 		type: "Kinematic",
@@ -13,6 +14,7 @@ const Box = ({ obstacle }) => {
 			if (event_.body.uuid === playerId) {
 				console.log("game over");
 				setLose(true);
+				setRun(false);
 			}
 		},
 	}));

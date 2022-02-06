@@ -6,6 +6,7 @@ import useStore from "../../ions/store";
 
 const Goal = ({ position, args, color, metalness, roughness }) => {
 	const setWin = useStore(state => state.setWin);
+	const setRun = useStore(state => state.setRun);
 	//For Animation
 	const goal = useRef();
 	useFrame(() => {
@@ -21,6 +22,7 @@ const Goal = ({ position, args, color, metalness, roughness }) => {
 			if (event_.body.uuid === playerId) {
 				console.log("win");
 				setWin(true);
+				setRun(false);
 			}
 		},
 	}));

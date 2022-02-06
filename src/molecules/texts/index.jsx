@@ -24,7 +24,13 @@ const Texts = ({ run, win, lose }) => {
 				fontSize={1}
 				color="black"
 			>
-				{run ? "hit goal, not wall" : "press spacebar to start"}
+				{run && !win && !lose
+					? "hit goal, not wall"
+					: !run && win && !lose
+					? "you did that really good"
+					: !run && !win && lose
+					? "is that all you got?"
+					: "press spacebar to start and play"}
 			</Text>
 		</>
 	);

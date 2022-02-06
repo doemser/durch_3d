@@ -28,7 +28,7 @@ const Level = ({ level }) => {
 				{run ? (
 					<PlayerControls run={run} moveUp={moveUp} />
 				) : (
-					<UiControls run={run} moveUp={moveUp} />
+					<UiControls run={run} win={win} lose={lose} />
 				)}
 				<Player moveUp={moveUp} run={run} win={win} lose={lose} {...currentLevel.player} />
 				<Goal {...currentLevel.goal} />

@@ -35,7 +35,7 @@ const Player = ({ run, win, lose, position, args, speed, color, metalness, rough
 	return (
 		<>
 			<mesh ref={ref} castShadow receiveShadow>
-				<sphereGeometry args={args} />
+				<sphereBufferGeometry args={args} />
 				<meshStandardMaterial color={color} metalness={metalness} roughness={roughness} />
 			</mesh>
 			);

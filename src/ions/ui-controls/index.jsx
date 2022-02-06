@@ -1,13 +1,15 @@
 import useStore from "../store";
 import { useEffect } from "react";
 
-const UiControls = ({ run }) => {
+const UiControls = ({ run, win, lose }) => {
 	useEffect(() => {
 		const setRun = useStore.getState().setRun;
 
 		const handleKeyUp = ({ code }) => {
 			if (code === "Space") {
-				setRun(true);
+				if (!run && !win && !lose) {
+					setRun(true);
+				}
 			}
 		};
 
