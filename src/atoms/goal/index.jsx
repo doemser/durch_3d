@@ -21,7 +21,7 @@ const Goal = ({ position, args, color, metalness, roughness }) => {
 		const gameState = useStore.getState().gameState;
 		api.rotation.set(clock.getElapsedTime() * 4, 0, 0);
 		if (gameState === "waiting") {
-			api.position.set(position[0], position[1], position[2]);
+			api.position.set(...position);
 		}
 	});
 
