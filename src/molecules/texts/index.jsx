@@ -9,7 +9,7 @@ const Texts = ({ gameState }) => {
 				anchorX="center"
 				anchorY="middle"
 				rotation={[-Math.PI / 4, 0, 0]}
-				position={[0, 3, 0]}
+				position={[0, 3, 3]}
 				fontSize={2}
 				color="black"
 			>
@@ -20,14 +20,14 @@ const Texts = ({ gameState }) => {
 				anchorX="center"
 				anchorY="middle"
 				rotation={[-Math.PI / 4, 0, 0]}
-				position={[0, 1, 0]}
+				position={[0, 1, 3]}
 				fontSize={1}
 				color="black"
 			>
 				{gameState === "running"
 					? "hit goal, not wall"
 					: gameState === "win"
-					? "you did that really good"
+					? "press Enter for next level"
 					: gameState === "lose"
 					? "is that all you got?"
 					: "press spacebar to start and play"}

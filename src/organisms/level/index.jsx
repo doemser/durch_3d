@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { OrbitControls } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
 import Player from "../../atoms/player";
@@ -6,14 +6,13 @@ import levels from "../../ions/levels";
 import Lights from "../../molecules/lights";
 import Map from "../../molecules/map";
 import Goal from "../../atoms/goal";
-import PlayerControls from "../../ions/player-controls";
 import useStore from "../../ions/store";
-import UiControls from "../../ions/ui-controls";
 import Texts from "../../molecules/texts";
 
-const Level = ({ level }) => {
-	const currentLevel = levels[Number.parseInt(level)];
+const Level = () => {
+	const level = useStore(state => state.level);
 	const gameState = useStore(state => state.gameState);
+	const currentLevel = levels[Number.parseInt(level)];
 
 	return (
 		<group>
@@ -22,7 +21,6 @@ const Level = ({ level }) => {
 			<Texts gameState={gameState} />
 			<Physics gravity={[0, -40, 0]}>
 				<Map map={currentLevel.map} />
-				{gameState === "running" ? <PlayerControls /> : <UiControls />}
 				<Player {...currentLevel.player} />
 				<Goal {...currentLevel.goal} />
 			</Physics>

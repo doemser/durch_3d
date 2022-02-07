@@ -22,7 +22,6 @@ const Page = () => {
 					<Button>New Game</Button>
 				</Link>
 			</StyledFlexFit>
-
 		</Layout>
 	);
 };

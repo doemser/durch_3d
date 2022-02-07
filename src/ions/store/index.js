@@ -15,9 +15,9 @@ const useStore = create(set => {
 			);
 		},
 		level: 0,
-		goToLevel: level => {
+		setLevel: query => {
 			set(() => ({
-				level,
+				level: query,
 			}));
 		},
 		direction: -1,
