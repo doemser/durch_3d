@@ -32,6 +32,14 @@ const useStore = create(set => {
 				goalId,
 			});
 		},
+		build: true,
+		toggleBuild: () => {
+			set(
+				produce(state => {
+					state.build = !state.build;
+				})
+			);
+		},
 	};
 });
 

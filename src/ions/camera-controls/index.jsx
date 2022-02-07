@@ -1,13 +1,12 @@
 import { useFrame, useThree } from "@react-three/fiber";
 import CameraControls from "camera-controls";
-import React, { useEffect, useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import * as THREE from "three";
-import "./styles.css";
 
 CameraControls.install({ THREE });
 export const clock = new THREE.Clock();
 
-export const Controls = () => {
+const MyCameraControls = () => {
 	const camera = useThree(state => state.camera);
 	const { domElement } = useThree(state => state.gl);
 	const controls = useMemo(() => new CameraControls(camera, domElement), [camera, domElement]);
@@ -29,3 +28,5 @@ export const Controls = () => {
 	});
 	return null;
 };
+
+export default MyCameraControls;
