@@ -3,10 +3,12 @@ import { useBox } from "@react-three/cannon";
 
 const Box = ({ obstacle }) => {
 	const [ref] = useBox(() => ({
+		mass: 1,
 		type: "Kinematic",
 		args: obstacle.args,
 		position: obstacle.position,
 	}));
+
 	return (
 		<mesh ref={ref} receiveShadow castShadow position={obstacle.position}>
 			<boxGeometry args={obstacle.args} />

@@ -1,2 +1,5 @@
 import "./level-0";
-export { default } from "./levels";
+import "./level-1";
+import levels from "./levels";
+export const { length: levelCount } = levels;
+export default levels;

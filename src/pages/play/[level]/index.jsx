@@ -1,24 +1,26 @@
 import Head from "next/head";
-
 import React, { useEffect } from "react";
 import Layout from "../../../organisms/layout";
-import { useRouter } from "next/router";
 import { Canvas } from "@react-three/fiber";
 import Level from "../../../organisms/level";
-import useStore from "../../../ions/store";
 import DebugPanel from "../../../molecules/debug/texts";
+import UiControls from "../../../ions/ui-controls";
+import PlayerControls from "../../../ions/player-controls";
+import useStore from "../../../ions/store";
+import { useRouter } from "next/router";
+import { levelCount } from "../../../ions/levels";
 
 const Page = () => {
-	// Gets current URL-ending
+	const gameState = useStore(state => state.gameState);
 	const {
 		query: { level },
 	} = useRouter();
 
-	// Whenever URL-ending changes, it sets the level in useStore
+	const parsedLevel = Number.parseInt(level);
 	useEffect(() => {
-		const goToLevel = useStore.getState().goToLevel;
-		goToLevel(level);
-	}, [level]);
+		const setLevel = useStore.getState().setLevel;
+		setLevel(parsedLevel);
+	}, [parsedLevel]);
 
 	return (
 		<Layout>
@@ -27,12 +29,31 @@ const Page = () => {
 				<meta key="description" name="description" content="start playing" />
 			</Head>
 			<DebugPanel />
+			{gameState === "running" ? <PlayerControls /> : <UiControls />}
 			<Canvas shadows className="canvas" camera={{ position: [0, 0, 25] }}>
 				<color attach="background" args={["black"]} />
-				<Level level={level} />
+				<Level />
 			</Canvas>
 		</Layout>
 	);
 };
 
 export default Page;
+
+export const getServerSideProps = async request => {
+	const {
+		query: { level },
+	} = request;
+	const parsedLevel = Number.parseInt(level);
+
+	if (levelCount < parsedLevel + 1) {
+		return {
+			redirect: {
+				permanent: false,
+				destination: "/",
+			},
+		};
+	}
+
+	return { props: {} };
+};

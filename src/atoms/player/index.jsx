@@ -7,7 +7,7 @@ const Player = ({ position, args, speed, color, metalness, roughness }) => {
 	const setGameState = useStore.getState().setGameState;
 	//Physics;
 	const [ref, api] = useSphere(() => ({
-		mass: 10,
+		mass: 1,
 		args: args,
 		type: "Static",
 		position: position,
@@ -32,14 +32,20 @@ const Player = ({ position, args, speed, color, metalness, roughness }) => {
 	useFrame(() => {
 		const direction = useStore.getState().direction;
 		const gameState = useStore.getState().gameState;
-		if (gameState === "lose") {
-			api.position.set(position[0], position[1], position[2]);
-		} else if (gameState === "running") {
-			api.position.set(
-				playerPosition.current[0] + speed,
-				playerPosition.current[1] + direction * speed,
-				0
-			);
+		switch (gameState) {
+			case "lose":
+			case "waiting":
+				api.position.set(...position);
+				break;
+			case "running":
+				api.position.set(
+					playerPosition.current[0] + speed,
+					playerPosition.current[1] + direction * speed,
+					0
+				);
+				break;
+			default:
+				break;
 		}
 	});
 
