@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { OrbitControls } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
 import Player from "../../atoms/player";
@@ -12,14 +12,15 @@ import Texts from "../../molecules/texts";
 const Level = () => {
 	const level = useStore(state => state.level);
 	const gameState = useStore(state => state.gameState);
+	const build = useStore(state => state.build);
 	const currentLevel = levels[Number.parseInt(level)];
 
 	return (
 		<group>
 			<Lights />
-			<OrbitControls />
+			{build ? <OrbitControls /> : null}
 			<Texts gameState={gameState} />
-			<Physics gravity={[0, -40, 0]}>
+			<Physics gravity={[0, -10, 0]}>
 				<Map map={currentLevel.map} />
 				<Player {...currentLevel.player} />
 				<Goal {...currentLevel.goal} />

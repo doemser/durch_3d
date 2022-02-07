@@ -40,6 +40,7 @@ const Page = () => {
 
 export default Page;
 
+// Fallback for false queries
 export const getServerSideProps = async request => {
 	const {
 		query: { level },

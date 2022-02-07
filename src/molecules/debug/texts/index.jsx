@@ -3,8 +3,9 @@ import useStore from "../../../ions/store";
 
 const DebugPanel = () => {
 	const level = useStore(state => state.level);
-	const direction = useStore(state => state.direction);
 	const gameState = useStore(state => state.gameState);
+	const build = useStore(state => state.build);
+	const toggleBuild = useStore(state => state.toggleBuild);
 	return (
 		<div
 			style={{
@@ -24,11 +25,15 @@ const DebugPanel = () => {
 			{gameState}
 			<br />
 			<br />
-			PLAYER
+			LEVEL: {level}
 			<br />
-			level: {level}
-			<br />
-			moves: {direction > 0 ? "up" : "down"}
+			<button
+				onClick={() => {
+					toggleBuild();
+				}}
+			>
+				Camera: {build ? "build" : "play"}
+			</button>
 		</div>
 	);
 };
