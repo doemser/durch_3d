@@ -6,6 +6,7 @@ import { PerspectiveCamera } from "@react-three/drei";
 
 const Player = ({ position, args, speed, color, metalness, roughness }) => {
 	const setGameState = useStore.getState().setGameState;
+	const build = useStore.getState().build;
 	//Physics;
 	const [ref, api] = useSphere(() => ({
 		mass: 1,
@@ -52,7 +53,7 @@ const Player = ({ position, args, speed, color, metalness, roughness }) => {
 
 	return (
 		<group ref={ref}>
-			<PerspectiveCamera makeDefault position={[0, 0, 25]} />
+			{build ? null : <PerspectiveCamera makeDefault position={[0, 0, 25]} />}
 			<mesh castShadow receiveShadow>
 				<sphereBufferGeometry args={args} />
 				<meshStandardMaterial color={color} metalness={metalness} roughness={roughness} />

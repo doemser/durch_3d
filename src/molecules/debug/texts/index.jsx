@@ -32,7 +32,7 @@ const DebugPanel = () => {
 					toggleBuild();
 				}}
 			>
-				Build: {build ? "on" : "off"}
+				Camera: {build ? "build" : "play"}
 			</button>
 		</div>
 	);
