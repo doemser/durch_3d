@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import useStore from "../../ions/store";
 import { useSphere } from "@react-three/cannon";
+import { PerspectiveCamera } from "@react-three/drei";
 
 const Player = ({ position, args, speed, color, metalness, roughness }) => {
 	const setGameState = useStore.getState().setGameState;
@@ -50,10 +51,13 @@ const Player = ({ position, args, speed, color, metalness, roughness }) => {
 	});
 
 	return (
-		<mesh ref={ref} castShadow receiveShadow>
-			<sphereBufferGeometry args={args} />
-			<meshStandardMaterial color={color} metalness={metalness} roughness={roughness} />
-		</mesh>
+		<group ref={ref}>
+			<PerspectiveCamera makeDefault position={[0, 0, 25]} />
+			<mesh castShadow receiveShadow>
+				<sphereBufferGeometry args={args} />
+				<meshStandardMaterial color={color} metalness={metalness} roughness={roughness} />
+			</mesh>
+		</group>
 	);
 };
 

@@ -32,7 +32,7 @@ const useStore = create(set => {
 				goalId,
 			});
 		},
-		build: true,
+		build: false,
 		toggleBuild: () => {
 			set(
 				produce(state => {
