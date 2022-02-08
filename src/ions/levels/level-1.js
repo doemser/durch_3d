@@ -5,7 +5,7 @@ createLevel({
 	player: {
 		position: [-10, 4, 0],
 		args: [0.5, 64, 64],
-		color: "red",
+		color: colors.playerColor,
 		speed: 0.15,
 		rotateUp: [0, 0, -0.785398],
 		rotateDown: [0, 0, -2.35619],
@@ -15,7 +15,7 @@ createLevel({
 	goal: {
 		position: [11.75, 2, 0],
 		args: [0.5, 2, 2],
-		color: "green",
+		color: colors.goalColor,
 		metalness: "0.5",
 		roughness: "0",
 	},

@@ -3,9 +3,11 @@ import { css } from "@emotion/react";
 export const colors = {
 	black: "#000",
 	white: "#fff",
-	primaryLight: "#b2bec3",
-	primaryMain: "#636e72",
-	primaryDark: "#2d3436",
+	playerColor: "#eb4d4b",
+	goalColor: "#6ab04c",
+	primaryLight: "#4834d4",
+	primaryMain: "#30336b",
+	primaryDark: "#130f40",
 	primaryContrastText: "#fff",
 	secondaryContrastText: "#000",
 };

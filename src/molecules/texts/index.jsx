@@ -1,5 +1,6 @@
 import { Text } from "@react-three/drei";
 import React from "react";
+import { colors } from "../../ions/styles/color-palette";
 
 const Texts = ({ gameState }) => {
 	return (
@@ -9,9 +10,9 @@ const Texts = ({ gameState }) => {
 				anchorX="center"
 				anchorY="middle"
 				rotation={[-Math.PI / 4, 0, 0]}
-				position={[0, 3, 3]}
+				position={[0, -6, 3]}
 				fontSize={2}
-				color="black"
+				color={colors.primaryContrastText}
 			>
 				{gameState === "win" ? "you win!" : gameState === "lose" ? "you lose" : ""}
 			</Text>
@@ -20,9 +21,9 @@ const Texts = ({ gameState }) => {
 				anchorX="center"
 				anchorY="middle"
 				rotation={[-Math.PI / 4, 0, 0]}
-				position={[0, 1, 3]}
+				position={[0, -8, 3]}
 				fontSize={1}
-				color="black"
+				color={colors.primaryContrastText}
 			>
 				{gameState === "running"
 					? "hit goal, not wall"
