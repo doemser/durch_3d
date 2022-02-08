@@ -17,12 +17,14 @@ const Player = ({ position, args, speed, color, metalness, roughness }) => {
 		position: position,
 		onCollideBegin: event_ => {
 			const goalId = useStore.getState().goalId;
+			const resetMoves = useStore.getState().resetMoves;
 			if (event_.body.uuid === goalId) {
 				console.log("win");
 				setGameState("win");
 			} else {
 				console.log("lose");
 				setGameState("lose");
+				resetMoves();
 			}
 		},
 	}));

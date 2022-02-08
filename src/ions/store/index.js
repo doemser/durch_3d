@@ -24,6 +24,13 @@ const useStore = create(set => {
 		changeDirection: direction => {
 			set(state => ({
 				direction: typeof direction === "undefined" ? state.direction * -1 : direction,
+				moves: state.moves + 1,
+			}));
+		},
+		moves: 0,
+		resetMoves: () => {
+			set(() => ({
+				moves: 0,
 			}));
 		},
 		goalId: null,

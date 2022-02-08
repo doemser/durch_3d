@@ -1,8 +1,10 @@
 import { Text } from "@react-three/drei";
 import React from "react";
 import { colors } from "../../ions/styles/color-palette";
+import useStore from "../../ions/store";
 
 const Texts = ({ gameState }) => {
+	const moves = useStore(state => state.moves);
 	return (
 		<>
 			<Text
@@ -23,6 +25,17 @@ const Texts = ({ gameState }) => {
 				rotation={[-Math.PI / 4, 0, 0]}
 				position={[0, -8, 3]}
 				fontSize={1}
+				color={colors.primaryContrastText}
+			>
+				moves: {moves}
+			</Text>
+			<Text
+				castShadow
+				anchorX="center"
+				anchorY="middle"
+				rotation={[-Math.PI / 4, 0, 0]}
+				position={[0, -9, 3]}
+				fontSize={0.7}
 				color={colors.primaryContrastText}
 			>
 				{gameState === "running"
