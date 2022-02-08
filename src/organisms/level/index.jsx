@@ -19,7 +19,7 @@ const Level = () => {
 		<group>
 			<Lights />
 			{build ? <OrbitControls /> : null}
-			<Texts gameState={gameState} />
+
 			<Physics gravity={[0, -10, 0]}>
 				<Map map={currentLevel.map} />
 				<Player {...currentLevel.player} />

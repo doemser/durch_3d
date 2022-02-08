@@ -3,7 +3,7 @@ import { colors } from "../styles/color-palette";
 
 createLevel({
 	player: {
-		position: [-10, 4.5, 0],
+		position: [-10, 2, 0],
 		args: [0.5, 64, 64],
 		color: colors.playerColor,
 		speed: 0.15,
@@ -13,7 +13,7 @@ createLevel({
 		roughness: "0",
 	},
 	goal: {
-		position: [11.75, 10, 0],
+		position: [11.75, 2, 0],
 		args: [0.5, 2, 2],
 		color: colors.goalColor,
 		metalness: "0.5",
@@ -27,7 +27,7 @@ createLevel({
 			rotation: 0,
 			metalness: "0.3",
 			roughness: "0.5",
-			id: "d6dea942-4453-48c9-a66a-2d54fcc44e56",
+			id: "1eff4344-0981-4342-9037-2b53b34c3498",
 		},
 		{
 			position: [0, 16.875, 0],
@@ -36,7 +36,7 @@ createLevel({
 			rotation: 0,
 			metalness: "0.3",
 			roughness: "0.5",
-			id: "e3929515-9072-44ab-a035-89ce6dab74d8",
+			id: "95ed28ab-d53a-45e5-b5a8-3584e6eb2533",
 		},
 		{
 			position: [-13.5, 6, 0],
@@ -45,7 +45,7 @@ createLevel({
 			rotation: 0,
 			metalness: "0.3",
 			roughness: "0.5",
-			id: "b39f4a08-9f41-400d-9e65-ac8fc4139195",
+			id: "a2844ef1-305b-466d-8c63-201cefe25a7a",
 		},
 		{
 			position: [13.5, 6, 0],
@@ -54,7 +54,7 @@ createLevel({
 			rotation: 0,
 			metalness: "0.3",
 			roughness: "0.5",
-			id: "0221f5c7-528d-49bc-9560-ea75b0024478",
+			id: "409d3c36-0d6d-4614-b08e-cbffd33d757c",
 		},
 		{
 			position: [0, 7.5, -3],
@@ -63,16 +63,34 @@ createLevel({
 			rotation: 0,
 			metalness: "0.3",
 			roughness: "0.5",
-			id: "1ab39890-3ebb-4ba8-af82-310497158718",
+			id: "2e5f40a6-dd2a-4368-a9b2-1a8495f85bac",
 		},
 		{
-			position: [0, 11, 0],
-			args: [5, 10, 3],
-			color: colors.primaryDark,
+			position: [1, 2, -1],
+			args: [10, 6, 3],
+			color: "#22a6b3",
 			rotation: 0,
 			metalness: "0.3",
 			roughness: "0.5",
-			id: "953c0783-13f5-4a1e-9ba7-547de6e2084d",
+			id: "3c7937bc-6ccb-4206-884f-543d4fe39162",
+		},
+		{
+			position: [-6, 12, 1],
+			args: [8, 4, 3],
+			color: "#22a6b3",
+			rotation: [0, 2, 10],
+			metalness: "0.3",
+			roughness: "0.5",
+			id: "968ff3d4-4d14-4425-b3c6-d615fc9e9c4f",
+		},
+		{
+			position: [6, 9, 0],
+			args: [4, 2, 3],
+			color: "#22a6b3",
+			rotation: [0, 2, 10],
+			metalness: "0.3",
+			roughness: "0.5",
+			id: "968ff3d4-4dasd4-4425-bqw6-d615fcqwd9c4f",
 		},
 	],
 });

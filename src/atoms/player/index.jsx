@@ -3,10 +3,12 @@ import { useFrame } from "@react-three/fiber";
 import useStore from "../../ions/store";
 import { useSphere } from "@react-three/cannon";
 import { PerspectiveCamera } from "@react-three/drei";
+import Texts from "../../molecules/texts";
 
 const Player = ({ position, args, speed, color, metalness, roughness }) => {
 	const setGameState = useStore.getState().setGameState;
 	const build = useStore.getState().build;
+	const gameState = useStore.getState().gameState;
 	//Physics;
 	const [ref, api] = useSphere(() => ({
 		mass: 1,
@@ -54,6 +56,7 @@ const Player = ({ position, args, speed, color, metalness, roughness }) => {
 	return (
 		<group ref={ref}>
 			{build ? null : <PerspectiveCamera makeDefault position={[0, 0, 25]} />}
+			<Texts gameState={gameState} />
 			<mesh castShadow receiveShadow>
 				<sphereBufferGeometry args={args} />
 				<meshStandardMaterial color={color} metalness={metalness} roughness={roughness} />
