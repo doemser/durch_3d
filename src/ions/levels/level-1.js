@@ -12,8 +12,6 @@ createLevel({
 		args: [0.5, 64, 64],
 		color: colors.playerColor,
 		speed: 0.15,
-		rotateUp: [0, 0, -0.785398],
-		rotateDown: [0, 0, -2.35619],
 		metalness: "0.5",
 		roughness: "0",
 	},
@@ -28,8 +26,8 @@ createLevel({
 		{
 			position: [0, -2.5, 0],
 			args: [30, 3, 3],
+			rotation: [0, 0, 0],
 			color: colors.primaryDark,
-			rotation: 0,
 			metalness: "0.3",
 			roughness: "0.5",
 			id: "33bf2423-7ebc-45bd-ac33-d61983d805b7",
@@ -37,8 +35,8 @@ createLevel({
 		{
 			position: [0, 16.875, 0],
 			args: [30, 3, 3],
+			rotation: [0, 0, 0],
 			color: colors.primaryDark,
-			rotation: 0,
 			metalness: "0.3",
 			roughness: "0.5",
 			id: "8978d10b-a6af-41dc-b42d-ef5d9fdcf27f",
@@ -46,8 +44,8 @@ createLevel({
 		{
 			position: [-13.5, 6, 0],
 			args: [3, 19, 3],
+			rotation: [0, 0, 0],
 			color: colors.primaryDark,
-			rotation: 0,
 			metalness: "0.3",
 			roughness: "0.5",
 			id: "6e2225a2-4ba8-4baf-8feb-a293edbdeedb",
@@ -55,8 +53,8 @@ createLevel({
 		{
 			position: [13.5, 6, 0],
 			args: [3, 19, 3],
+			rotation: [0, 0, 0],
 			color: colors.primaryDark,
-			rotation: 0,
 			metalness: "0.3",
 			roughness: "0.5",
 			id: "0cfe50e9-4146-4130-b4a2-16baa1668b8e",
@@ -64,8 +62,8 @@ createLevel({
 		{
 			position: [0, 7.5, -3],
 			args: [30, 20, 3],
+			rotation: [0, 0, 0],
 			color: colors.primaryMain,
-			rotation: 0,
 			metalness: "0.3",
 			roughness: "0.5",
 			id: "4358e2f6-999f-403f-9e03-309ba99131d5",
@@ -73,8 +71,8 @@ createLevel({
 		{
 			position: [0, 5, 0],
 			args: [8, 5, 3],
+			rotation: [0, 0, 0],
 			color: "purple",
-			rotation: 0,
 			metalness: "0.3",
 			roughness: "0.5",
 			id: "d28879e1-6cdb-4911-88f1-e281d5da1452",
