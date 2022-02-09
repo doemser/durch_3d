@@ -68,12 +68,8 @@ createLevel({
 		{
 			position: [-6, 7, 0],
 			args: [9, 2, 1],
-			rotation: [0.04, 0.2, 0],
-			axisRotate: [
-				{ rotate: false, direction: 1 },
-				{ rotate: false, direction: 1 },
-				{ rotate: true, direction: 1 },
-			],
+			rotation: [0.04, 0.02, 0],
+			axis: [null, null, { direction: 1, speed: 2 }],
 			speed: 0.02,
 			color: "#0fb9b1",
 			metalness: "0.3",
@@ -84,11 +80,7 @@ createLevel({
 			position: [5, 7, 0],
 			args: [9, 2, 1],
 			rotation: [0, 0.02, 0.1],
-			axisRotate: [
-				{ rotate: false, direction: 1 },
-				{ rotate: false, direction: 1 },
-				{ rotate: true, direction: -1 },
-			],
+			axis: [null, null, { direction: 1, speed: 2 }],
 			speed: 0.02,
 			color: "#0fb9b1",
 			metalness: "0.3",

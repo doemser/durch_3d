@@ -2,44 +2,38 @@ import { useBox } from "@react-three/cannon";
 import React, { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 
-const MovingBox = ({ obstacle }) => {
+const RotatingBox = ({
+	obstacle: { args, position, rotation, axis, speed, metalness, color, roughness },
+}) => {
 	const [ref, api] = useBox(() => ({
 		mass: 1,
 		type: "Kinematic",
-		args: obstacle.args,
-		position: obstacle.position,
+		args: args,
+		position: position,
 	}));
 
-	const obstaclePosition = useRef(obstacle.rotation);
+	const obstaclePosition = useRef(rotation);
 	useEffect(() => {
 		const unsubscribe = api.rotation.subscribe(value => (obstaclePosition.current = value));
 		return unsubscribe;
 	}, []);
 
 	useFrame(({ clock }) => {
+		const [x, y, z] = axis;
+		const time = clock.getElapsedTime();
 		api.rotation.set(
-			obstacle.axisRotate[0].rotate
-				? clock.getElapsedTime() + obstacle.axisRotate[0].direction * obstacle.speed
-				: obstacle.rotation[0],
-			obstacle.axisRotate[1].rotate
-				? clock.getElapsedTime() + obstacle.axisRotate[1].direction * obstacle.speed
-				: obstacle.rotation[1],
-			obstacle.axisRotate[2].rotate
-				? clock.getElapsedTime() + obstacle.axisRotate[2].direction * obstacle.speed
-				: obstacle.rotation[2]
+			x ? time * x.direction * x.speed : rotation[0],
+			y ? time * y.direction * y.speed : rotation[1],
+			z ? time * z.direction * z.speed : rotation[2]
 		);
 	});
 
 	return (
-		<mesh ref={ref} receiveShadow castShadow position={obstacle.position}>
-			<boxGeometry args={obstacle.args} />
-			<meshStandardMaterial
-				color={obstacle.color}
-				metalness={obstacle.metalness}
-				roughness={obstacle.roughness}
-			/>
+		<mesh ref={ref} receiveShadow castShadow position={position}>
+			<boxGeometry args={args} />
+			<meshStandardMaterial color={color} metalness={metalness} roughness={roughness} />
 		</mesh>
 	);
 };
 
-export default MovingBox;
+export default RotatingBox;

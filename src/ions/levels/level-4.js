@@ -66,15 +66,10 @@ createLevel({
 	],
 	rotating: [
 		{
-			position: [1, 7, 0],
-			args: [13, 2, 1],
-			rotation: [0.04, 0.2, 0],
-			axisRotate: [
-				{ rotate: false, direction: 1 },
-				{ rotate: false, direction: 1 },
-				{ rotate: true, direction: -1 },
-			],
-			speed: 0.02,
+			position: [1, 7, 2],
+			args: [10.5, 2, 1],
+			rotation: [0.04, 0.6, 0],
+			axis: [null, null, { direction: 1, speed: 2 }],
 			color: "#f0932b",
 			metalness: "0.3",
 			roughness: "0.5",
