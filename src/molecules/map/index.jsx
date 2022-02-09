@@ -1,31 +1,15 @@
 import React from "react";
-import { useBox } from "@react-three/cannon";
+import Box from "../../atoms/box";
+import RotatingBox from "../../atoms/rotating-box";
 
-const Box = ({ obstacle }) => {
-	const [ref] = useBox(() => ({
-		mass: 1,
-		type: "Kinematic",
-		args: obstacle.args,
-		position: obstacle.position,
-	}));
-
-	return (
-		<mesh ref={ref} receiveShadow castShadow position={obstacle.position}>
-			<boxGeometry args={obstacle.args} />
-			<meshStandardMaterial
-				color={obstacle.color}
-				metalness={obstacle.metalness}
-				roughness={obstacle.roughness}
-			/>
-		</mesh>
-	);
-};
-
-const Map = ({ map }) => {
+const Map = ({ map, rotating }) => {
 	return (
 		<>
 			{map.map(obstacle => {
 				return <Box key={obstacle.id} obstacle={obstacle} />;
+			})}
+			{rotating?.map(obstacle => {
+				return <RotatingBox key={obstacle.id} obstacle={obstacle} />;
 			})}
 		</>
 	);
