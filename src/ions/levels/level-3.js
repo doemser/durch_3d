@@ -2,6 +2,11 @@ import { createLevel } from "./levels";
 import { colors } from "../styles/color-palette";
 
 createLevel({
+	levelNumber: {
+		position: [-9, 1, -1.3],
+		color: colors.black,
+		size: 2,
+	},
 	player: {
 		position: [-10, 2, 0],
 		args: [0.5, 64, 64],
@@ -13,7 +18,7 @@ createLevel({
 		roughness: "0",
 	},
 	goal: {
-		position: [11.75, 2, 0],
+		position: [11.75, 8, 0],
 		args: [0.5, 2, 2],
 		color: colors.goalColor,
 		metalness: "0.5",

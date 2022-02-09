@@ -7,6 +7,7 @@ import Lights from "../../molecules/lights";
 import Map from "../../molecules/map";
 import Goal from "../../atoms/goal";
 import useStore from "../../ions/store";
+import LevelText from "../../atoms/level-text";
 
 const Level = () => {
 	const level = useStore(state => state.level);
@@ -17,7 +18,7 @@ const Level = () => {
 		<group>
 			<Lights />
 			{build ? <OrbitControls /> : null}
-
+			<LevelText level={level} {...currentLevel.levelNumber} />
 			<Physics gravity={[0, -10, 0]}>
 				<Map map={currentLevel.map} />
 				<Player {...currentLevel.player} />
