@@ -12,8 +12,8 @@ const Texts = ({ gameState }) => {
 				anchorX="center"
 				anchorY="middle"
 				rotation={[-Math.PI / 4, 0, 0]}
-				position={[0, -6, 3]}
-				fontSize={2}
+				position={[0, -7, 3]}
+				fontSize={1.5}
 				color={colors.primaryContrastText}
 			>
 				{gameState === "win" ? "you win!" : gameState === "lose" ? "you lose" : ""}
@@ -24,7 +24,7 @@ const Texts = ({ gameState }) => {
 				anchorY="middle"
 				rotation={[-Math.PI / 4, 0, 0]}
 				position={[0, -8, 3]}
-				fontSize={1}
+				fontSize={0.8}
 				color={colors.primaryContrastText}
 			>
 				moves: {moves}
@@ -35,7 +35,7 @@ const Texts = ({ gameState }) => {
 				anchorY="middle"
 				rotation={[-Math.PI / 4, 0, 0]}
 				position={[0, -9, 3]}
-				fontSize={0.7}
+				fontSize={0.5}
 				color={colors.primaryContrastText}
 			>
 				{gameState === "running"
