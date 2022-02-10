@@ -10,6 +10,7 @@ const UiControls = () => {
 			const gameState = useStore.getState().gameState;
 			const level = useStore.getState().level;
 			const setGameState = useStore.getState().setGameState;
+			const setOverallStats = useStore.getState().setOverallStats;
 			const resetMoves = useStore.getState().resetMoves;
 
 			if (code === "Space") {
@@ -21,6 +22,7 @@ const UiControls = () => {
 				if (gameState === "win") {
 					router.push(`/play/${parseInt(level) + 1}`);
 					setGameState("waiting");
+					setOverallStats(gameState);
 					resetMoves();
 				}
 			}

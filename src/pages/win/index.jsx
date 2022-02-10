@@ -4,8 +4,10 @@ import Button from "../../atoms/button";
 import Layout from "../../organisms/layout";
 import Link from "next/link";
 import { StyledFlexFit } from "../../organisms/flex/styled";
+import useStore from "../../ions/store/index";
 
 const Page = () => {
+	const overallStats = useStore(state => state.overallStats);
 	return (
 		<Layout>
 			<Head>
@@ -19,8 +21,12 @@ const Page = () => {
 
 			<StyledFlexFit>
 				<h2>good job!</h2>
-				<h4>lives:</h4>
-				<h4>moves:</h4>
+				<h4>
+					you needed: <br />
+					lives: {overallStats.lives}
+					<br />
+					moves: {overallStats.moves}
+				</h4>
 				<Link href="./play/0">
 					<Button>do it again</Button>
 				</Link>

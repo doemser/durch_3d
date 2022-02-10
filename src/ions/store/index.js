@@ -33,6 +33,17 @@ const useStore = create(set => {
 				moves: 0,
 			}));
 		},
+		overallStats: { lives: 0, moves: 0 },
+		setOverallStats: gameState => {
+			set(
+				produce(state => {
+					state.overallStats.moves = state.overallStats.moves + state.moves;
+					if (gameState === "lose") {
+						state.overallStats.lives = state.overallStats.lives + 1;
+					}
+				})
+			);
+		},
 		goalId: null,
 		setGoalId: goalId => {
 			set({

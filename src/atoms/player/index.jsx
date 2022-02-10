@@ -20,6 +20,7 @@ const Player = ({ position, args, speed, color, metalness, roughness }) => {
 		position: position,
 		onCollideBegin: event_ => {
 			const goalId = useStore.getState().goalId;
+			const setOverallStats = useStore.getState().setOverallStats;
 			const resetMoves = useStore.getState().resetMoves;
 			if (event_.body.uuid === goalId) {
 				console.log("win");
@@ -27,6 +28,7 @@ const Player = ({ position, args, speed, color, metalness, roughness }) => {
 			} else {
 				console.log("lose");
 				setGameState("lose");
+				setOverallStats("lose");
 				resetMoves();
 			}
 		},

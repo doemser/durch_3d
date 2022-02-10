@@ -5,8 +5,20 @@ import useStore from "../../ions/store";
 
 const Texts = ({ gameState }) => {
 	const moves = useStore(state => state.moves);
+	const overallStats = useStore(state => state.overallStats);
 	return (
 		<>
+			<Text
+				castShadow
+				anchorX="center"
+				anchorY="middle"
+				rotation={[-Math.PI / 4, 0, 0]}
+				position={[0, -9.75, 3]}
+				fontSize={0.4}
+				color={colors.primaryContrastText}
+			>
+				total lives: {overallStats.lives} - moves: {overallStats.moves}
+			</Text>
 			<Text
 				castShadow
 				anchorX="center"
