@@ -27,7 +27,7 @@ const Page = () => {
 						<h2>you made it!</h2>
 						<h4>
 							you needed: <br />
-							lives: {overallStats.deaths}
+							deaths: {overallStats.deaths}
 							<br />
 							moves: {overallStats.moves}
 						</h4>
