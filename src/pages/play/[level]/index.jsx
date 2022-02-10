@@ -51,7 +51,7 @@ export const getServerSideProps = async request => {
 		return {
 			redirect: {
 				permanent: false,
-				destination: "/",
+				destination: "/win",
 			},
 		};
 	}
