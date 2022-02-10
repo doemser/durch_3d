@@ -40,6 +40,9 @@ const useStore = create(set => {
 					state.overallStats.moves = state.overallStats.moves + state.moves;
 					if (gameState === "lose") {
 						state.overallStats.lives = state.overallStats.lives + 1;
+					} else if (gameState === "restart") {
+						state.overallStats.lives = 0;
+						state.overallStats.moves = 0;
 					}
 				})
 			);

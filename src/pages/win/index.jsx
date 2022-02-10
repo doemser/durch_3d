@@ -8,6 +8,7 @@ import useStore from "../../ions/store/index";
 
 const Page = () => {
 	const overallStats = useStore(state => state.overallStats);
+	const setOverallStats = useStore(state => state.setOverallStats);
 	return (
 		<Layout>
 			<Head>
@@ -28,7 +29,13 @@ const Page = () => {
 					moves: {overallStats.moves}
 				</h4>
 				<Link href="./play/0">
-					<Button>do it again</Button>
+					<Button
+						onClick={() => {
+							setOverallStats("restart");
+						}}
+					>
+						do it again
+					</Button>
 				</Link>
 			</StyledFlexFit>
 		</Layout>
