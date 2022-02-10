@@ -26,6 +26,8 @@ createLevel({
 		{
 			position: [0, -2.5, 0],
 			args: [30, 3, 3],
+			rotation: [0, 0, 0],
+			axis: [null, null, null],
 			color: colors.primaryDark,
 			metalness: "0.3",
 			roughness: "0.5",
@@ -34,6 +36,8 @@ createLevel({
 		{
 			position: [0, 16.875, 0],
 			args: [30, 3, 3],
+			rotation: [0, 0, 0],
+			axis: [null, null, null],
 			color: colors.primaryDark,
 			metalness: "0.3",
 			roughness: "0.5",
@@ -42,6 +46,8 @@ createLevel({
 		{
 			position: [-13.5, 6, 0],
 			args: [3, 19, 3],
+			rotation: [0, 0, 0],
+			axis: [null, null, null],
 			color: colors.primaryDark,
 			metalness: "0.3",
 			roughness: "0.5",
@@ -50,6 +56,8 @@ createLevel({
 		{
 			position: [13.5, 6, 0],
 			args: [3, 19, 3],
+			rotation: [0, 0, 0],
+			axis: [null, null, null],
 			color: colors.primaryDark,
 			metalness: "0.3",
 			roughness: "0.5",
@@ -58,13 +66,13 @@ createLevel({
 		{
 			position: [0, 7.5, -3],
 			args: [30, 20, 3],
+			rotation: [0, 0, 0],
+			axis: [null, null, null],
 			color: colors.primaryMain,
 			metalness: "0.3",
 			roughness: "0.5",
 			id: "bf6c3222-8ab6-4018-bd74-7a7e92b2637d",
 		},
-	],
-	rotating: [
 		{
 			position: [1, 7, 2],
 			args: [10.5, 2, 1],
