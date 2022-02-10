@@ -5,6 +5,7 @@ import Layout from "../../organisms/layout";
 import Link from "next/link";
 import { StyledFlexFit } from "../../organisms/flex/styled";
 import useStore from "../../ions/store/index";
+import levels from "../../ions/levels";
 
 const Page = () => {
 	const overallStats = useStore(state => state.overallStats);
@@ -21,13 +22,23 @@ const Page = () => {
 			</Head>
 
 			<StyledFlexFit>
-				<h2>good job!</h2>
-				<h4>
-					you needed: <br />
-					lives: {overallStats.lives}
-					<br />
-					moves: {overallStats.moves}
-				</h4>
+				{overallStats.levels === levels.length ? (
+					<>
+						<h2>you made it!</h2>
+						<h4>
+							you needed: <br />
+							deaths: {overallStats.deaths}
+							<br />
+							moves: {overallStats.moves}
+						</h4>
+					</>
+				) : (
+					<>
+						<h2>waaaait a second..</h2>
+						<h4>you can´t just skip levels..</h4>
+					</>
+				)}
+
 				<Link href="./play/0">
 					<Button
 						onClick={() => {

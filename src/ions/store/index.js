@@ -33,16 +33,17 @@ const useStore = create(set => {
 				moves: 0,
 			}));
 		},
-		overallStats: { lives: 0, moves: 0 },
+		overallStats: { levels: 0, deaths: 0, moves: 0 },
 		setOverallStats: gameState => {
 			set(
 				produce(state => {
 					state.overallStats.moves = state.overallStats.moves + state.moves;
-					if (gameState === "lose") {
-						state.overallStats.lives = state.overallStats.lives + 1;
+					if (gameState === "win") {
+						state.overallStats.levels = state.overallStats.levels + 1;
+					} else if (gameState === "lose") {
+						state.overallStats.deaths = state.overallStats.deaths + 1;
 					} else if (gameState === "restart") {
-						state.overallStats.lives = 0;
-						state.overallStats.moves = 0;
+						state.overallStats = { levels: 0, deaths: 0, moves: 0 };
 					}
 				})
 			);
