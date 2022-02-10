@@ -17,8 +17,7 @@ const Texts = ({ gameState }) => {
 				fontSize={0.4}
 				color={colors.primaryContrastText}
 			>
-				total levels played: {overallStats.levels} - lives: {overallStats.lives} - moves:{" "}
-				{overallStats.moves}
+				total deaths: {overallStats.deaths} - moves: {overallStats.moves}
 			</Text>
 			<Text
 				castShadow

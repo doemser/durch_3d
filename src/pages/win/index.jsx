@@ -24,22 +24,18 @@ const Page = () => {
 			<StyledFlexFit>
 				{overallStats.levels === levels.length ? (
 					<>
-						<h2>good job!</h2>
+						<h2>you made it!</h2>
 						<h4>
-							you played {overallStats.levels} levels
-							<br />
-							and needed: <br />
-							lives: {overallStats.lives}
+							you needed: <br />
+							lives: {overallStats.deaths}
 							<br />
 							moves: {overallStats.moves}
 						</h4>
 					</>
 				) : (
 					<>
-						<h2>wait a minute..</h2>
-						<h4>
-							you can´t just skip levels and expect me to render a highscore for you..
-						</h4>
+						<h2>waaaait a second..</h2>
+						<h4>you can´t just skip levels..</h4>
 					</>
 				)}
 
