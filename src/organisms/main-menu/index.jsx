@@ -1,12 +1,12 @@
 import UiBackground from "../../atoms/ui-background";
-import UiButton from "../../molecules/ui-button";
+import UiLinkButton from "../../molecules/ui-link-button";
 import React from "react";
 
 const MainMenu = ({ router }) => {
 	return (
 		<>
 			<UiBackground />
-			<UiButton
+			<UiLinkButton
 				args={[10, 4, 1]}
 				position={[0, 2.5, 0]}
 				rotation={[0, 0.15, 0]}
@@ -15,8 +15,8 @@ const MainMenu = ({ router }) => {
 				url="/play/0"
 			>
 				new game
-			</UiButton>
-			<UiButton
+			</UiLinkButton>
+			<UiLinkButton
 				args={[5, 2, 1]}
 				position={[0, -2.5, 0]}
 				rotation={[0, -0.15, 0]}
@@ -25,7 +25,7 @@ const MainMenu = ({ router }) => {
 				url="https://github.com/doemser"
 			>
 				credits
-			</UiButton>
+			</UiLinkButton>
 		</>
 	);
 };

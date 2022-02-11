@@ -2,7 +2,7 @@ import { colors } from "../../ions/styles/color-palette";
 import React, { useEffect, useState } from "react";
 import UiButtonText from "../../atoms/ui-button-text";
 
-const UiButton = ({ children, position, rotation, args, router, type, url }) => {
+const UiLinkButton = ({ children, position, rotation, args, router, type, url }) => {
 	const [hovered, setHover] = useState(false);
 	useEffect(() => {
 		document.body.style.cursor = hovered ? "pointer" : "auto";
@@ -42,4 +42,4 @@ const UiButton = ({ children, position, rotation, args, router, type, url }) => 
 	);
 };
 
-export default UiButton;
+export default UiLinkButton;

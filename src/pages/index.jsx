@@ -5,6 +5,7 @@ import Layout from "../organisms/layout";
 import Lights from "../molecules/lights";
 import MainMenu from "../organisms/main-menu";
 import { useRouter } from "next/router";
+import { Physics } from "@react-three/cannon";
 
 const Page = () => {
 	const router = useRouter();
@@ -22,7 +23,9 @@ const Page = () => {
 			<Canvas shadows className="canvas" camera={{ position: [0, 0, 25] }}>
 				<color attach="background" args={["black"]} />
 				<Lights />
-				<MainMenu router={router} />
+				<Physics>
+					<MainMenu router={router} />
+				</Physics>
 			</Canvas>
 		</Layout>
 	);
