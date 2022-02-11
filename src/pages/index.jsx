@@ -1,11 +1,13 @@
 import React from "react";
+import { Canvas } from "@react-three/fiber";
 import Head from "next/head";
-import Button from "../atoms/button";
 import Layout from "../organisms/layout";
-import Link from "next/link";
-import { StyledFlexFit } from "../organisms/flex/styled";
+import Lights from "../molecules/lights";
+import MainMenu from "../organisms/main-menu";
+import { useRouter } from "next/router";
 
 const Page = () => {
+	const router = useRouter();
 	return (
 		<Layout>
 			<Head>
@@ -17,11 +19,11 @@ const Page = () => {
 				/>
 			</Head>
 
-			<StyledFlexFit>
-				<Link href="./play/0">
-					<Button>New Game</Button>
-				</Link>
-			</StyledFlexFit>
+			<Canvas shadows className="canvas" camera={{ position: [0, 0, 25] }}>
+				<color attach="background" args={["black"]} />
+				<Lights />
+				<MainMenu router={router} />
+			</Canvas>
 		</Layout>
 	);
 };

@@ -8,7 +8,7 @@ const Lights = () => {
 				castShadow
 				intensity={1}
 				position={[0, 10, 25]}
-				shadow-mapSize={[2048, 2048]}
+				shadow-mapSize={[5000, 5000]}
 			/>
 		</>
 	);
