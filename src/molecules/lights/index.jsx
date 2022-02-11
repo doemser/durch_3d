@@ -7,7 +7,7 @@ const Lights = () => {
 			<spotLight
 				castShadow
 				intensity={1}
-				position={[0, 10, 25]}
+				position={[0, 20, 25]}
 				shadow-mapSize={[5000, 5000]}
 			/>
 		</>

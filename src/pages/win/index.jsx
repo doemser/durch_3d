@@ -1,15 +1,14 @@
 import React from "react";
 import Head from "next/head";
-import Button from "../../atoms/button";
 import Layout from "../../organisms/layout";
-import Link from "next/link";
-import { StyledFlexFit } from "../../organisms/flex/styled";
-import useStore from "../../ions/store/index";
-import levels from "../../ions/levels";
+import Lights from "../../molecules/lights";
+import { Physics } from "@react-three/cannon";
+import { Canvas } from "@react-three/fiber";
+import { useRouter } from "next/router";
+import WinMenu from "../../organisms/win-menu";
 
 const Page = () => {
-	const overallStats = useStore(state => state.overallStats);
-	const setOverallStats = useStore(state => state.setOverallStats);
+	const router = useRouter();
 	return (
 		<Layout>
 			<Head>
@@ -20,35 +19,13 @@ const Page = () => {
 					content="A little game about shooting through"
 				/>
 			</Head>
-
-			<StyledFlexFit>
-				{overallStats.levels === levels.length ? (
-					<>
-						<h2>you made it!</h2>
-						<h4>
-							you needed: <br />
-							deaths: {overallStats.deaths}
-							<br />
-							moves: {overallStats.moves}
-						</h4>
-					</>
-				) : (
-					<>
-						<h2>waaaait a second..</h2>
-						<h4>you can´t just skip levels..</h4>
-					</>
-				)}
-
-				<Link href="./play/0">
-					<Button
-						onClick={() => {
-							setOverallStats("restart");
-						}}
-					>
-						do it again
-					</Button>
-				</Link>
-			</StyledFlexFit>
+			<Canvas shadows className="canvas" camera={{ position: [0, 0, 25] }}>
+				<color attach="background" args={["black"]} />
+				<Lights />
+				<Physics>
+					<WinMenu router={router} />
+				</Physics>
+			</Canvas>
 		</Layout>
 	);
 };

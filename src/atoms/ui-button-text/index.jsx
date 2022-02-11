@@ -2,15 +2,14 @@ import { Text } from "@react-three/drei";
 import { colors } from "../../ions/styles/color-palette";
 import React from "react";
 
-const UiButtonText = ({ children, args }) => {
+const UiButtonText = ({ children, args, color = "white" }) => {
 	return (
 		<Text
-			castShadow
 			anchorX="center"
 			anchorY="middle"
 			position={[0, 0, 1]}
 			fontSize={args[1] / 3.33}
-			color={colors.primaryContrastText}
+			color={color}
 		>
 			{children}
 		</Text>
