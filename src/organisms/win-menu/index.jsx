@@ -4,41 +4,43 @@ import React from "react";
 import useStore from "../../ions/store";
 import { colors } from "../../ions/styles/color-palette";
 import { Text } from "@react-three/drei";
+import levels from "../../ions/levels";
+import GameTitle from "../../molecules/game-title";
 
 const WinMenu = ({ router }) => {
 	const overallStats = useStore(state => state.overallStats);
 	return (
 		<UiBackground>
-			<Text
-				anchorX="center"
-				anchorY="middle"
-				rotation={[0, 0, 0]}
-				position={[0, 3.5, 1]}
-				fontSize={1.05}
-				color={colors.primaryContrastText}
-			>
-				YOU DID IT!
-			</Text>
-			<Text
-				anchorX="center"
-				anchorY="middle"
-				rotation={[0, 0, 0]}
-				position={[-3, 2, 1]}
-				fontSize={1}
-				color={colors.primaryContrastText}
-			>
-				deaths: {overallStats.deaths}
-			</Text>
-			<Text
-				anchorX="center"
-				anchorY="middle"
-				rotation={[0, 0, 0]}
-				position={[3, 2, 1]}
-				fontSize={1}
-				color={colors.primaryContrastText}
-			>
-				moves: {overallStats.moves}
-			</Text>
+			<GameTitle titlePosition={[0, 7, 1]} subTitlePosition={[0, 5.5, 1]} fontSize={2.5} />
+			{overallStats.levels === levels.length ? (
+				<group>
+					<Text position={[0, 3.5, 1]} fontSize={1.05} color={colors.primaryContrastText}>
+						YOU DID IT!
+					</Text>
+					<Text position={[2, 1, 1]} fontSize={1} color={colors.primaryContrastText}>
+						{overallStats.deaths}
+					</Text>
+					<Text position={[2, 0, 1]} fontSize={1} color={colors.primaryContrastText}>
+						{overallStats.deaths === 1 ? "death" : "deaths"}
+					</Text>
+					<Text position={[-2, 1, 1]} fontSize={1} color={colors.primaryContrastText}>
+						{overallStats.moves}
+					</Text>
+					<Text position={[-2, 0, 1]} fontSize={1} color={colors.primaryContrastText}>
+						moves
+					</Text>
+				</group>
+			) : (
+				<group>
+					<Text position={[0, 3.5, 1]} fontSize={1.05} color={colors.primaryContrastText}>
+						WAIT A SECOND!
+					</Text>
+					<Text position={[0, 1, 1]} fontSize={1} color={colors.primaryContrastText}>
+						You can&apos;t just skip {levels.length - overallStats.levels} levels!
+					</Text>
+				</group>
+			)}
+
 			<UiLinkButton
 				args={[8, 3.2, 1]}
 				position={[0, -3, 0]}
@@ -62,34 +64,3 @@ const WinMenu = ({ router }) => {
 };
 
 export default WinMenu;
-
-/*
-*
-			<StyledFlexFit>
-				{overallStats.levels === levels.length ? (
-					<>
-						<h2>you made it!</h2>
-						<h4>
-							you needed: <br />
-							deaths: {overallStats.deaths}
-							<br />
-							moves: {overallStats.moves}
-						</h4>
-					</>
-				) : (
-					<>
-						<h2>waaaait a second..</h2>
-						<h4>you can´t just skip levels..</h4>
-					</>
-				)}
-
-				<Link href="./play/0">
-					<Button
-						onClick={() => {
-							setOverallStats("restart");
-						}}
-					>
-						do it again
-					</Button>
-				</Link>
-			</StyledFlexFit>*/

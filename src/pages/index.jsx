@@ -12,11 +12,11 @@ const Page = () => {
 	return (
 		<Layout>
 			<Head>
-				<title key="title">shoot.through</title>
+				<title key="title">DURCH</title>
 				<meta
 					key="description"
 					name="description"
-					content="A little game about shooting through"
+					content="a little game about shooting through"
 				/>
 			</Head>
 
