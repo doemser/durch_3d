@@ -3,12 +3,12 @@ import React, { useEffect } from "react";
 import Layout from "../../../organisms/layout";
 import { Canvas } from "@react-three/fiber";
 import Level from "../../../organisms/level";
-import DebugPanel from "../../../molecules/debug/texts";
 import UiControls from "../../../ions/ui-controls";
 import PlayerControls from "../../../ions/player-controls";
 import useStore from "../../../ions/store";
 import { useRouter } from "next/router";
 import { levelCount } from "../../../ions/levels";
+//import DebugPanel from "../../../molecules/debug/texts";
 
 const Page = () => {
 	const gameState = useStore(state => state.gameState);
