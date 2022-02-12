@@ -17,16 +17,16 @@ const WinMenu = ({ router }) => {
 					<Text position={[0, 3.5, 1]} fontSize={1.05} color={colors.primaryContrastText}>
 						YOU DID IT!
 					</Text>
-					<Text position={[2, 1, 1]} fontSize={1} color={colors.primaryContrastText}>
+					<Text position={[2, 1.5, 1]} fontSize={1} color={colors.primaryContrastText}>
 						{overallStats.deaths}
 					</Text>
-					<Text position={[2, 0, 1]} fontSize={1} color={colors.primaryContrastText}>
+					<Text position={[2, 0.5, 1]} fontSize={0.9} color={colors.primaryContrastText}>
 						{overallStats.deaths === 1 ? "death" : "deaths"}
 					</Text>
-					<Text position={[-2, 1, 1]} fontSize={1} color={colors.primaryContrastText}>
+					<Text position={[-2, 1.5, 1]} fontSize={1} color={colors.primaryContrastText}>
 						{overallStats.moves}
 					</Text>
-					<Text position={[-2, 0, 1]} fontSize={1} color={colors.primaryContrastText}>
+					<Text position={[-2, 0.5, 1]} fontSize={0.9} color={colors.primaryContrastText}>
 						moves
 					</Text>
 				</group>
