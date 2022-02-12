@@ -1,11 +1,6 @@
 import { css } from "@emotion/react";
 
 export const globalStyle = css`
-	:root {
-		--header-height: 30px;
-		--footer-height: 30px;
-	}
-
 	*,
 	*::before,
 	*::after {
@@ -22,7 +17,7 @@ export const globalStyle = css`
 		min-height: 100vh;
 		margin: 0;
 		background: var(--black);
-		color: white;
+		color: var(--white);
 		font-size: 1rem;
 	}
 

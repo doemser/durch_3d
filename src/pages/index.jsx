@@ -1,27 +1,32 @@
 import React from "react";
+import { Canvas } from "@react-three/fiber";
 import Head from "next/head";
-import Button from "../atoms/button";
 import Layout from "../organisms/layout";
-import Link from "next/link";
-import { StyledFlexFit } from "../organisms/flex/styled";
+import Lights from "../molecules/lights";
+import MainMenu from "../organisms/main-menu";
+import { useRouter } from "next/router";
+import { Physics } from "@react-three/cannon";
 
 const Page = () => {
+	const router = useRouter();
 	return (
 		<Layout>
 			<Head>
-				<title key="title">shoot.through</title>
+				<title key="title">DURCH</title>
 				<meta
 					key="description"
 					name="description"
-					content="A little game about shooting through"
+					content="a little game about shooting through"
 				/>
 			</Head>
 
-			<StyledFlexFit>
-				<Link href="./play/0">
-					<Button>New Game</Button>
-				</Link>
-			</StyledFlexFit>
+			<Canvas shadows className="canvas" camera={{ position: [0, 0, 25] }}>
+				<color attach="background" args={["black"]} />
+				<Lights />
+				<Physics>
+					<MainMenu router={router} />
+				</Physics>
+			</Canvas>
 		</Layout>
 	);
 };

@@ -20,7 +20,7 @@ const Level = () => {
 			{build ? <OrbitControls /> : null}
 			<LevelText level={level} {...currentLevel.levelNumber} />
 			<Physics gravity={[0, -10, 0]}>
-				<Map map={currentLevel.map} rotating={currentLevel.rotating} />
+				<Map map={currentLevel.map} />
 				<Player {...currentLevel.player} />
 				<Goal {...currentLevel.goal} />
 			</Physics>
