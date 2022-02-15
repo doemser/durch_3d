@@ -1,8 +1,14 @@
 import React from "react";
 import Main from "../main";
+import Header from "../header";
 
 const Layout = ({ children }) => {
-	return <Main>{children}</Main>;
+	return (
+		<>
+			<Header />
+			<Main>{children}</Main>
+		</>
+	);
 };
 
 export default Layout;
