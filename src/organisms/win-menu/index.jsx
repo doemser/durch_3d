@@ -17,17 +17,23 @@ const WinMenu = ({ router }) => {
 					<Text position={[0, 3.5, 1]} fontSize={1.05} color={colors.primaryContrastText}>
 						YOU DID IT!
 					</Text>
-					<Text position={[2, 1.5, 1]} fontSize={1} color={colors.primaryContrastText}>
+					<Text position={[0, 1.5, 1]} fontSize={1} color={colors.primaryContrastText}>
 						{overallStats.deaths}
 					</Text>
-					<Text position={[2, 0.5, 1]} fontSize={0.9} color={colors.primaryContrastText}>
+					<Text position={[0, 0.5, 1]} fontSize={0.9} color={colors.primaryContrastText}>
 						{overallStats.deaths === 1 ? "death" : "deaths"}
 					</Text>
-					<Text position={[-2, 1.5, 1]} fontSize={1} color={colors.primaryContrastText}>
+					<Text position={[-4, 1.5, 1]} fontSize={1} color={colors.primaryContrastText}>
 						{overallStats.moves}
 					</Text>
-					<Text position={[-2, 0.5, 1]} fontSize={0.9} color={colors.primaryContrastText}>
+					<Text position={[-4, 0.5, 1]} fontSize={0.9} color={colors.primaryContrastText}>
 						moves
+					</Text>
+					<Text position={[4, 1.5, 1]} fontSize={1} color={colors.primaryContrastText}>
+						{overallStats.score}
+					</Text>
+					<Text position={[4, 0.5, 1]} fontSize={0.9} color={colors.primaryContrastText}>
+						score
 					</Text>
 				</group>
 			) : (
@@ -43,7 +49,7 @@ const WinMenu = ({ router }) => {
 
 			<UiLinkButton
 				args={[8, 3.2, 1]}
-				position={[0, -3, 0]}
+				position={[-4.2, -6.5, 0]}
 				router={router}
 				type="restart"
 				url="/play/0"
@@ -51,8 +57,8 @@ const WinMenu = ({ router }) => {
 				try again
 			</UiLinkButton>
 			<UiLinkButton
-				args={[5, 2, 1]}
-				position={[0, -6.5, 0]}
+				args={[8, 3.2, 1]}
+				position={[4.2, -6.5, 0]}
 				router={router}
 				type="restart"
 				url="/"

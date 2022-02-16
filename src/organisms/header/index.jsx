@@ -12,10 +12,9 @@ const Header = () => {
 	const { data: session } = useSession();
 
 	if (session) {
-		console.log(session);
+		console.log(session.user.id);
 		return (
 			<StyledHeader>
-				Hi {session.user.name}!{" "}
 				<StyledImage width={40} height={40} src={session.user.image} />
 				<button type="button" onClick={() => signOut()}>
 					logout
@@ -25,7 +24,7 @@ const Header = () => {
 	} else {
 		return (
 			<StyledHeader>
-				<button type="button" onClick={() => signIn()}>
+				<button type="button" onClick={() => signIn("github")}>
 					sign in
 				</button>
 			</StyledHeader>
