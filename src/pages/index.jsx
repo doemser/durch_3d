@@ -6,9 +6,12 @@ import Lights from "../molecules/lights";
 import MainMenu from "../organisms/main-menu";
 import { useRouter } from "next/router";
 import { Physics } from "@react-three/cannon";
+import useTransientSession from "../ions/hooks/use-transient-session";
 
 const Page = () => {
+	useTransientSession();
 	const router = useRouter();
+
 	return (
 		<Layout>
 			<Head>

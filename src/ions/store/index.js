@@ -3,6 +3,10 @@ import produce from "immer";
 
 const useStore = create(set => {
 	return {
+		session: null,
+		setSession: session => {
+			set({ session });
+		},
 		gameState: "waiting",
 		setGameState: gameState => {
 			set(
@@ -46,7 +50,7 @@ const useStore = create(set => {
 						state.overallStats = { levels: 0, deaths: 0, moves: 0, score: 0 };
 					}
 					state.overallStats.score = Math.floor(
-						10_000 /
+						1000_000 /
 							state.overallStats.moves /
 							(state.overallStats.deaths === 0 ? 1 : state.overallStats.deaths * 2)
 					);

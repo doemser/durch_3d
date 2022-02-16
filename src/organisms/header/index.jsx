@@ -3,6 +3,7 @@ import StyledHeader from "./styled";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import styled from "@emotion/styled";
+import StyledButton from "../../atoms/button/styled";
 
 const StyledImage = styled(Image)`
 	border-radius: 50%;
@@ -12,21 +13,21 @@ const Header = () => {
 	const { data: session } = useSession();
 
 	if (session) {
-		console.log(session.user.id);
 		return (
 			<StyledHeader>
 				<StyledImage width={40} height={40} src={session.user.image} />
-				<button type="button" onClick={() => signOut()}>
+				<br />
+				<StyledButton type="button" onClick={() => signOut()}>
 					logout
-				</button>
+				</StyledButton>
 			</StyledHeader>
 		);
 	} else {
 		return (
 			<StyledHeader>
-				<button type="button" onClick={() => signIn("github")}>
+				<StyledButton type="button" onClick={() => signIn("github")}>
 					sign in
-				</button>
+				</StyledButton>
 			</StyledHeader>
 		);
 	}

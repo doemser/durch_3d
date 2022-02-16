@@ -6,7 +6,6 @@ const StyledHeader = styled.header`
 	top: 0;
 	right: 0;
 	padding: 10px;
-	background: black;
 `;
 
 export default StyledHeader;
