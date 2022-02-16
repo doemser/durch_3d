@@ -15,11 +15,10 @@ const Header = () => {
 	if (session) {
 		return (
 			<StyledHeader>
-				<StyledImage width={40} height={40} src={session.user.image} />
-				<br />
 				<StyledButton type="button" onClick={() => signOut()}>
 					logout
 				</StyledButton>
+				<StyledImage width={40} height={40} src={session.user.image} />
 			</StyledHeader>
 		);
 	} else {
