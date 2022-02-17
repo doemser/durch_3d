@@ -6,8 +6,11 @@ import { Physics } from "@react-three/cannon";
 import { Canvas } from "@react-three/fiber";
 import { useRouter } from "next/router";
 import WinMenu from "../../organisms/win-menu";
+import useTransientSession from "../../ions/hooks/use-transient-session";
 
 const Page = () => {
+	useTransientSession();
+
 	const router = useRouter();
 	return (
 		<Layout>

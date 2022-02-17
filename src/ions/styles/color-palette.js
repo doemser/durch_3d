@@ -16,6 +16,7 @@ export const colorPalette = css`
 	:root {
 		--black: ${colors.black};
 		--white: ${colors.white};
+		--player-color: ${colors.playerColor};
 		--primary-light: ${colors.primaryLight};
 		--primary-main: ${colors.primaryMain};
 		--primary-dark: ${colors.primaryDark};

@@ -3,6 +3,10 @@ import produce from "immer";
 
 const useStore = create(set => {
 	return {
+		session: null,
+		setSession: session => {
+			set({ session });
+		},
 		gameState: "waiting",
 		setGameState: gameState => {
 			set(
@@ -33,7 +37,7 @@ const useStore = create(set => {
 				moves: 0,
 			}));
 		},
-		overallStats: { levels: 0, deaths: 0, moves: 0 },
+		overallStats: { levels: 0, deaths: 0, moves: 0, score: 0 },
 		setOverallStats: gameState => {
 			set(
 				produce(state => {
@@ -43,8 +47,13 @@ const useStore = create(set => {
 					} else if (gameState === "lose") {
 						state.overallStats.deaths = state.overallStats.deaths + 1;
 					} else if (gameState === "restart") {
-						state.overallStats = { levels: 0, deaths: 0, moves: 0 };
+						state.overallStats = { levels: 0, deaths: 0, moves: 0, score: 0 };
 					}
+					state.overallStats.score = Math.floor(
+						1000_000 /
+							state.overallStats.moves /
+							(state.overallStats.deaths === 0 ? 1 : state.overallStats.deaths * 2)
+					);
 				})
 			);
 		},

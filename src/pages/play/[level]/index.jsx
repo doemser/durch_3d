@@ -1,16 +1,18 @@
-import Head from "next/head";
-import React, { useEffect } from "react";
-import Layout from "../../../organisms/layout";
 import { Canvas } from "@react-three/fiber";
-import Level from "../../../organisms/level";
-import UiControls from "../../../ions/ui-controls";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import React, { useEffect } from "react";
+import useTransientSession from "../../../ions/hooks/use-transient-session";
+import { levelCount } from "../../../ions/levels";
 import PlayerControls from "../../../ions/player-controls";
 import useStore from "../../../ions/store";
-import { useRouter } from "next/router";
-import { levelCount } from "../../../ions/levels";
+import UiControls from "../../../ions/ui-controls";
+import Layout from "../../../organisms/layout";
+import Level from "../../../organisms/level";
 //import DebugPanel from "../../../molecules/debug/texts";
 
 const Page = () => {
+	useTransientSession();
 	const gameState = useStore(state => state.gameState);
 	const {
 		query: { level },
@@ -25,7 +27,7 @@ const Page = () => {
 	return (
 		<Layout>
 			<Head>
-				<title key="title">play</title>
+				<title key="title">DURCH - Level {level}</title>
 				<meta key="description" name="description" content="start playing" />
 			</Head>
 			{/*<DebugPanel />*/}
