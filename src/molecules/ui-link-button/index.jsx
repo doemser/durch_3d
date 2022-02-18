@@ -4,9 +4,6 @@ import UiButtonText from "../../atoms/ui-button-text";
 import useStore from "../../ions/store";
 
 const UiLinkButton = ({ children, position, rotation, args, router, type, url }) => {
-	const session = useStore(state => state.session);
-	const overallStats = useStore(state => state.overallStats);
-	const postHighscore = useStore(state => state.postHighscore);
 	const setOverallStats = useStore(state => state.setOverallStats);
 	const [hovered, setHover] = useState(false);
 	useEffect(() => {
@@ -26,10 +23,6 @@ const UiLinkButton = ({ children, position, rotation, args, router, type, url })
 				onClick={() => {
 					setHover(false);
 					switch (type) {
-						case "highscoreSubmit":
-							postHighscore(session.user, overallStats);
-							router.push(url);
-							break;
 						case "intern":
 							router.push(url);
 							break;

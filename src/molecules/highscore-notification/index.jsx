@@ -1,26 +1,12 @@
 import { Text } from "@react-three/drei";
 import { colors } from "../../ions/styles/color-palette";
 import React from "react";
-import UiLinkButton from "../ui-link-button";
 
-const HighscoreNotification = ({ session, router }) => {
+const HighscoreNotification = ({ session }) => {
 	return (
-		<>
-			<Text position={[0, -1, 1]} fontSize={0.8} color={colors.primaryContrastText}>
-				{session ? `submit this to leaderboard?` : `sign in to rank next time!`}
-			</Text>
-			{session ? (
-				<UiLinkButton
-					args={[7, 2, 1]}
-					position={[0, -3, 0]}
-					type="highscoreSubmit"
-					url="/leaderboard"
-					router={router}
-				>
-					yeah! submit
-				</UiLinkButton>
-			) : null}
-		</>
+		<Text position={[0, -2, 1]} fontSize={0.8} color={colors.primaryContrastText}>
+			{session ? `check your rank on the leaderboard` : `sign in to rank on your next round!`}
+		</Text>
 	);
 };
 

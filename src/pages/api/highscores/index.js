@@ -33,33 +33,25 @@ const handler = async (request, response) => {
 			}
 			break;
 
-		//update content of specific note
 		case "PUT":
-			try {
-				console.log("try body request", request.body);
-				const mongoResponse = await Highscore.findByIdAndUpdate(request.body.noteId, {
-					content: request.body.content,
-				});
-				console.log("mongoDB response", mongoResponse);
-				response.status(200).json(mongoResponse);
-			} catch (err) {
-				console.log(err);
-				response.status(403).send("ups, something went wrong");
-			}
-			break;
-
-		case "DELETE":
-			try {
-				console.log("try delete: delete is called");
-				console.log("try to get info about request bodynote: ", request.query.noteId);
-				const mongoResponse = await Highscore.findByIdAndDelete({
-					_id: request.query.noteId,
-				});
-				console.log("mongoDB response", mongoResponse);
-				response.status(200).json(mongoResponse);
-			} catch (err) {
-				console.log(err);
-				response.status(403).send("ups, something went wrong");
+			if (!session) {
+				response.status(401).send("Lol.. you thought i would let this happen?");
+			} else {
+				try {
+					console.log("try body request", request.body);
+					const mongoResponse = await Highscore.findOneAndUpdate(
+						request.body.user,
+						request.body,
+						{
+							new: true,
+						}
+					);
+					console.log("mongoDB response", mongoResponse);
+					response.status(200).json(mongoResponse);
+				} catch (err) {
+					console.log(err);
+					response.status(403).send("ups, something went wrong");
+				}
 			}
 			break;
 

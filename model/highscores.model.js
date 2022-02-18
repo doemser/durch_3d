@@ -4,6 +4,7 @@ const highscoreSchema = new mongoose.Schema(
 	{
 		name: String,
 		user: String,
+		image: String,
 		score: Number,
 		moves: Number,
 		deaths: Number,

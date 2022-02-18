@@ -1,13 +1,8 @@
 import React from "react";
+import StyledImage from "../../atoms/image";
 import StyledHeader from "./styled";
 import { useSession, signIn, signOut } from "next-auth/react";
-import Image from "next/image";
-import styled from "@emotion/styled";
 import StyledButton from "../../atoms/button/styled";
-
-const StyledImage = styled(Image)`
-	border-radius: 50%;
-`;
 
 const Header = () => {
 	const { data: session } = useSession();

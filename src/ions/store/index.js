@@ -81,10 +81,22 @@ const useStore = create(set => {
 			set(() => ({ highscores: result }));
 		},
 		postHighscore: async (session, stats) => {
-			console.log("fetching highscore data");
+			console.log("posting highscore data");
 			await axios.post("/api/highscores", {
 				name: session.name,
 				user: session.id,
+				image: session.image,
+				score: stats.score,
+				moves: stats.moves,
+				deaths: stats.deaths,
+			});
+		},
+		putHighscore: async (session, stats) => {
+			console.log("updating highscore data");
+			await axios.put("/api/highscores", {
+				name: session.name,
+				user: session.id,
+				image: session.image,
 				score: stats.score,
 				moves: stats.moves,
 				deaths: stats.deaths,
