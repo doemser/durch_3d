@@ -1,7 +1,8 @@
-import React from "react";
-import StyledHeader from "./styled";
-import { useSession, signIn, signOut } from "next-auth/react";
+import styled from "@emotion/styled";
+import Image from "next/image";
 
-const myImage = () => {};
+const StyledImage = styled(Image)`
+	border-radius: 50%;
+`;
 
-export default Header;
+export default StyledImage;

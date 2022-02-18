@@ -4,8 +4,8 @@ import React from "react";
 
 const HighscoreNotification = ({ session }) => {
 	return (
-		<Text position={[0, -2, 1]} fontSize={1.05} color={colors.primaryContrastText}>
-			{session ? `logged in and rankable` : `log in to rank`}
+		<Text position={[0, -2, 1]} fontSize={0.8} color={colors.primaryContrastText}>
+			{session ? `check your rank on the leaderboard` : `sign in to rank on your next round!`}
 		</Text>
 	);
 };

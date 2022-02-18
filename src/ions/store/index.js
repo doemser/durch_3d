@@ -1,3 +1,4 @@
+import axios from "axios";
 import create from "zustand";
 import produce from "immer";
 
@@ -70,6 +71,36 @@ const useStore = create(set => {
 					state.build = !state.build;
 				})
 			);
+		},
+		highscores: [],
+		getHighscores: async () => {
+			console.log("fetching highscore data");
+			const response = await axios.get("/api/highscores");
+			const result = response.data;
+
+			set(() => ({ highscores: result }));
+		},
+		postHighscore: async (session, stats) => {
+			console.log("posting highscore data");
+			await axios.post("/api/highscores", {
+				name: session.name,
+				user: session.id,
+				image: session.image,
+				score: stats.score,
+				moves: stats.moves,
+				deaths: stats.deaths,
+			});
+		},
+		putHighscore: async (session, stats) => {
+			console.log("updating highscore data");
+			await axios.put("/api/highscores", {
+				name: session.name,
+				user: session.id,
+				image: session.image,
+				score: stats.score,
+				moves: stats.moves,
+				deaths: stats.deaths,
+			});
 		},
 	};
 });
