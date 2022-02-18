@@ -5,7 +5,7 @@ const UiNavigationButtons = ({ router }) => {
 	return (
 		<>
 			<UiLinkButton
-				args={[8, 3.2, 1]}
+				args={[8, 2.5, 1]}
 				position={[4.2, -6.5, 0]}
 				router={router}
 				type="restart"
@@ -14,13 +14,13 @@ const UiNavigationButtons = ({ router }) => {
 				try again
 			</UiLinkButton>
 			<UiLinkButton
-				args={[8, 3.2, 1]}
+				args={[8, 2.5, 1]}
 				position={[-4.2, -6.5, 0]}
 				router={router}
 				type="restart"
-				url="/"
+				url="/leaderboard"
 			>
-				back
+				leaderboard
 			</UiLinkButton>
 		</>
 	);

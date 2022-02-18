@@ -18,7 +18,7 @@ const WinMenu = ({ router }) => {
 			{overallStats.levels === levels.length ? (
 				<>
 					<WinNotification />
-					<HighscoreNotification session={session} />
+					<HighscoreNotification session={session} router={router} />
 				</>
 			) : (
 				<CheatNotification />
