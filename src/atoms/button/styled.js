@@ -8,6 +8,13 @@ const StyledButton = styled.button`
 	background: var(--primary-light);
 	color: var(--primary-contrast-text);
 	cursor: pointer;
+
+	&:hover {
+		background: var(--primary-main);
+	}
+	&:active {
+		background: var(--player-color);
+	}
 `;
 
 export default StyledButton;
