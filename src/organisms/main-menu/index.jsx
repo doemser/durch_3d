@@ -7,12 +7,27 @@ const MainMenu = ({ router }) => {
 	return (
 		<UiBackground>
 			<GameTitle titlePosition={[0, 7, 1]} subTitlePosition={[0, 5.5, 1]} fontSize={2.5} />
-			<UiLinkButton args={[8, 3.2, 1]} router={router} type="intern" url="/play/0">
+			<UiLinkButton
+				args={[8, 3, 1]}
+				position={[0, 2, 0]}
+				router={router}
+				type="intern"
+				url="/play/0"
+			>
 				new game
 			</UiLinkButton>
 			<UiLinkButton
+				args={[8, 3, 1]}
+				position={[0, -2, 0]}
+				router={router}
+				type="intern"
+				url="/leaderboard"
+			>
+				leaderboard
+			</UiLinkButton>
+			<UiLinkButton
 				args={[5, 2, 1]}
-				position={[0, -3.5, 0]}
+				position={[0, -6, 0]}
 				router={router}
 				type="extern"
 				url="https://github.com/doemser"
