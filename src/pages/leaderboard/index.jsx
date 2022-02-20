@@ -45,20 +45,24 @@ const Page = () => {
 						</TableRow>
 					</TableHead>
 					<TableBody>
-						{highscores.map((highscore, index) => (
-							<TableRow key={highscore.user}>
-								<TableCell component="th" scope="row">
-									{index + 1}
-								</TableCell>
-								<TableCell align="left">
-									<StyledImage width={35} height={35} src={highscore.image} />
-								</TableCell>
-								<TableCell align="right">{highscore.name}</TableCell>
-								<TableCell align="right">{highscore.score}</TableCell>
-								<TableCell align="right">{highscore.moves}</TableCell>
-								<TableCell align="right">{highscore.deaths}</TableCell>
-							</TableRow>
-						))}
+						{highscores
+							.sort(function (a, b) {
+								return b.score - a.score;
+							})
+							.map((highscore, index) => (
+								<TableRow key={highscore.user}>
+									<TableCell component="th" scope="row">
+										{index + 1}
+									</TableCell>
+									<TableCell align="left">
+										<StyledImage width={35} height={35} src={highscore.image} />
+									</TableCell>
+									<TableCell align="right">{highscore.name}</TableCell>
+									<TableCell align="right">{highscore.score}</TableCell>
+									<TableCell align="right">{highscore.moves}</TableCell>
+									<TableCell align="right">{highscore.deaths}</TableCell>
+								</TableRow>
+							))}
 					</TableBody>
 				</Table>
 			</TableContainer>
