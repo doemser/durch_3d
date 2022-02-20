@@ -76,7 +76,9 @@ const useStore = create(set => {
 		getHighscores: async () => {
 			console.log("fetching highscore data");
 			const response = await axios.get("/api/highscores");
-			const result = response.data;
+			const result = response.data.sort(function (a, b) {
+				return b.score - a.score;
+			});
 
 			set(() => ({ highscores: result }));
 		},
