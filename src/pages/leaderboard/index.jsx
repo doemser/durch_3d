@@ -52,9 +52,7 @@ const Page = () => {
 								<TableCell align="center" sx={{ padding: "0" }}>
 									<StyledImage width={35} height={35} src={highscore.image} />
 								</TableCell>
-								<TableCell align="center" align="center">
-									{highscore.name}
-								</TableCell>
+								<TableCell align="center">{highscore.name}</TableCell>
 								<TableCell align="center">{highscore.score}</TableCell>
 								<TableCell align="center">{highscore.moves}</TableCell>
 								<TableCell align="center">{highscore.deaths}</TableCell>
