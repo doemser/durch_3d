@@ -18,11 +18,9 @@ const WinMenu = ({ router }) => {
 			const postHighscore = useStore.getState().postHighscore;
 			const highscores = useStore.getState().highscores;
 			const check = highscores.find(e => e.user === session.user.id);
-			if (check) {
-				if (check.score < overallStats.score) {
-					putHighscore(session.user, overallStats);
-				}
-			} else {
+			if (check && check.score < overallStats.score) {
+				putHighscore(session.user, overallStats);
+			} else if (!check) {
 				postHighscore(session.user, overallStats);
 			}
 		}

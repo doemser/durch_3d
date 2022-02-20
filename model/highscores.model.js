@@ -3,7 +3,10 @@ import mongoose from "mongoose";
 const highscoreSchema = new mongoose.Schema(
 	{
 		name: String,
-		user: String,
+		user: {
+			type: String,
+			unique: true,
+		},
 		image: String,
 		score: Number,
 		moves: Number,
