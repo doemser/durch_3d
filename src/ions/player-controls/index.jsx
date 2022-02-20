@@ -11,10 +11,8 @@ const PlayerControls = () => {
 			}
 		};
 		const handleKeyDown = ({ code, repeat }) => {
-			if (code === "Space") {
-				if (!repeat) {
-					changeDirection(-1);
-				}
+			if (code === "Space" && !repeat) {
+				changeDirection(-1);
 			}
 		};
 
