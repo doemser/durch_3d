@@ -25,6 +25,7 @@
   "dependencies": {
     "@emotion/react": "11.7.1",
     "@emotion/styled": "11.6.0",
+    "@mui/material": "^5.4.2",
     "@next-auth/mongodb-adapter": "^1.0.1",
     "@react-three/cannon": "^4.6.1",
     "@react-three/drei": "^8.8.0",
