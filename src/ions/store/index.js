@@ -1,6 +1,7 @@
 import axios from "axios";
 import create from "zustand";
 import produce from "immer";
+import orderBy from "lodash.orderby";
 
 const useStore = create(set => {
 	return {
@@ -76,9 +77,7 @@ const useStore = create(set => {
 		getHighscores: async () => {
 			console.log("fetching highscore data");
 			const response = await axios.get("/api/highscores");
-			const result = response.data.sort(function (a, b) {
-				return b.score - a.score;
-			});
+			const result = orderBy(response.data, ["score", "updatedAt"], ["desc", "asc"]);
 
 			set(() => ({ highscores: result }));
 		},
