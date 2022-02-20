@@ -40,7 +40,7 @@ const handler = async (request, response) => {
 				try {
 					console.log("try body request", request.body);
 					const mongoResponse = await Highscore.findOneAndUpdate(
-						request.body.user,
+						{ user: request.body.user },
 						request.body,
 						{
 							new: true,
@@ -50,7 +50,7 @@ const handler = async (request, response) => {
 					response.status(200).json(mongoResponse);
 				} catch (err) {
 					console.log(err);
-					response.status(403).send("ups, something went wrong");
+					response.status(403).json({ message: "ups, something went wrong" });
 				}
 			}
 			break;
