@@ -41,12 +41,7 @@ const Page = () => {
 			{/*<DebugPanel />*/}
 			{gameState === "running" ? <PlayerControls /> : <UiControls />}
 			<MobileControls />
-			<Canvas
-				shadows
-				className="canvas"
-				camera={{ position: [0, 0, 25] }}
-				style={{ userSelect: "none" }}
-			>
+			<Canvas shadows className="canvas" camera={{ position: [0, 0, 25] }}>
 				<color attach="background" args={["black"]} />
 				<Level router={router} />
 			</Canvas>

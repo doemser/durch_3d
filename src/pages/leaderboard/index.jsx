@@ -49,7 +49,7 @@ const Page = () => {
 			>
 				LEADERBOARD
 			</Typography>
-			<TableContainer component={Paper} sx={{ userSelect: "none" }}>
+			<TableContainer component={Paper}>
 				<Table aria-label="durch leaderboard" sx={{ background: "var(--black)" }}>
 					<TableHead>
 						<TableRow>

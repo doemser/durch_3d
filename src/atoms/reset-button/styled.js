@@ -17,7 +17,6 @@ const StyledResetButton = styled.div`
 	color: var(--primary-contrast-text);
 	text-align: center;
 	cursor: pointer;
-	user-select: none;
 
 	&:hover {
 		background: var(--primary-light);

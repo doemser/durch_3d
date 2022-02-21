@@ -21,11 +21,17 @@ const MobileControls = () => {
 			}
 		};
 
+		const handleTouchMove = event_ => {
+			event_.preventDefault();
+		};
+
 		window.addEventListener("touchstart", handleMouseDown, false);
 		window.addEventListener("touchend", handleMouseUp, false);
+		window.addEventListener("touchmove", handleTouchMove, false);
 		return () => {
 			window.removeEventListener("touchstart", handleMouseDown, false);
 			window.removeEventListener("touchend", handleMouseUp, false);
+			window.removeEventListener("touchmove", handleTouchMove, false);
 		};
 	}, []);
 

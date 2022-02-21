@@ -5,6 +5,7 @@ export const globalStyle = css`
 	*::before,
 	*::after {
 		box-sizing: border-box;
+		user-select: none;
 	}
 
 	html {
