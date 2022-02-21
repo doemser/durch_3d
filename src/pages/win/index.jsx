@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import { lockScrollStyles } from "../../ions/styles";
 import Layout from "../../organisms/layout";
 import Lights from "../../molecules/lights";
 import { Physics } from "@react-three/cannon";
@@ -14,6 +15,7 @@ const Page = () => {
 	const router = useRouter();
 	return (
 		<Layout>
+			{lockScrollStyles}
 			<Head>
 				<title key="title">DURCH</title>
 				<meta

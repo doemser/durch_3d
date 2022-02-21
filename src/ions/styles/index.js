@@ -1,4 +1,13 @@
-import { css } from "@emotion/react";
+import { css, Global } from "@emotion/react";
+import React from "react";
+
+export const lockScroll = css`
+	html,
+	body {
+		height: 100%;
+		overflow: hidden;
+	}
+`;
 
 export const globalStyle = css`
 	*,
@@ -15,7 +24,6 @@ export const globalStyle = css`
 	body {
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
 		margin: 0;
 		background: var(--black);
 		color: var(--white);
@@ -51,3 +59,5 @@ export const globalFonts = css`
 				url("/fonts/roboto/roboto-v29-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 	}
 `;
+
+export const lockScrollStyles = <Global styles={lockScroll} />;
