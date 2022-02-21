@@ -12,10 +12,10 @@ const StyledResetButton = styled.div`
 	border: none;
 	border-radius: 50%;
 	background: var(--player-color);
+	box-shadow: 0 0 20px 0 black;
 	color: var(--primary-contrast-text);
 	text-align: center;
 	cursor: pointer;
-	box-shadow: 0 0 20px 0 black;
 
 	&:hover {
 		background: var(--primary-light);
