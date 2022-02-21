@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
+import ResetButton from "../../../atoms/reset-button";
 import useTransientSession from "../../../ions/hooks/use-transient-session";
 import { levelCount } from "../../../ions/levels";
 import PlayerControls from "../../../ions/player-controls";
@@ -41,6 +42,7 @@ const Page = () => {
 				<color attach="background" args={["black"]} />
 				<Level />
 			</Canvas>
+			<ResetButton />
 		</Layout>
 	);
 };
