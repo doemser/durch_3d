@@ -8,6 +8,7 @@ import { levelCount } from "../../../ions/levels";
 import MobileControls from "../../../ions/mobile-controls";
 import PlayerControls from "../../../ions/player-controls";
 import useStore from "../../../ions/store";
+import { lockScrollStyles } from "../../../ions/styles";
 import UiControls from "../../../ions/ui-controls";
 import Layout from "../../../organisms/layout";
 import Level from "../../../organisms/level";
@@ -34,6 +35,7 @@ const Page = () => {
 
 	return (
 		<Layout>
+			{lockScrollStyles}
 			<Head>
 				<title key="title">DURCH - Level {level}</title>
 				<meta key="description" name="description" content="start playing" />

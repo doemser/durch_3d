@@ -1,6 +1,7 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
 import Head from "next/head";
+import { lockScrollStyles } from "../ions/styles";
 import Layout from "../organisms/layout";
 import Lights from "../molecules/lights";
 import MainMenu from "../organisms/main-menu";
@@ -14,6 +15,7 @@ const Page = () => {
 
 	return (
 		<Layout>
+			{lockScrollStyles}
 			<Head>
 				<title key="title">DURCH</title>
 				<meta
