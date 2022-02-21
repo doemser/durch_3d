@@ -9,7 +9,7 @@ import Goal from "../../atoms/goal";
 import useStore from "../../ions/store";
 import LevelText from "../../atoms/level-text";
 
-const Level = () => {
+const Level = ({ router }) => {
 	const level = useStore(state => state.level);
 	const build = useStore(state => state.build);
 	const currentLevel = levels[Number.parseInt(level)];
@@ -21,7 +21,7 @@ const Level = () => {
 			<LevelText level={level} {...currentLevel.levelNumber} />
 			<Physics gravity={[0, -10, 0]}>
 				<Map map={currentLevel.map} />
-				<Player {...currentLevel.player} />
+				<Player {...currentLevel.player} router={router} />
 				<Goal {...currentLevel.goal} />
 			</Physics>
 		</group>

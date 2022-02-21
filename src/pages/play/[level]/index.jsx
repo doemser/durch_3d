@@ -15,6 +15,7 @@ import Level from "../../../organisms/level";
 const Page = () => {
 	useTransientSession();
 	const gameState = useStore(state => state.gameState);
+	const router = useRouter();
 	const {
 		query: { level },
 	} = useRouter();
@@ -40,7 +41,7 @@ const Page = () => {
 			{gameState === "running" ? <PlayerControls /> : <UiControls />}
 			<Canvas shadows className="canvas" camera={{ position: [0, 0, 25] }}>
 				<color attach="background" args={["black"]} />
-				<Level />
+				<Level router={router} />
 			</Canvas>
 			<ResetButton />
 		</Layout>

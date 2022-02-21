@@ -7,7 +7,7 @@ import OverlayTexts from "../../molecules/overlay-texts";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 import GameTitle from "../../molecules/game-title";
 
-const Player = ({ position, args, speed, color, metalness, roughness }) => {
+const Player = ({ position, args, speed, color, metalness, roughness, router }) => {
 	const setGameState = useStore.getState().setGameState;
 	const build = useStore.getState().build;
 	const gameState = useStore.getState().gameState;
@@ -79,7 +79,7 @@ const Player = ({ position, args, speed, color, metalness, roughness }) => {
 		<group ref={ref}>
 			{build ? null : <PerspectiveCamera makeDefault position={[0, 0, 25]} />}
 			<GameTitle fontSize="0.6" titlePosition={[0, 8.4, 6]} subTitlePosition={[0, 20, 4]} />
-			<OverlayTexts gameState={gameState} />
+			<OverlayTexts gameState={gameState} router={router} />
 			<mesh ref={playerMesh} castShadow receiveShadow>
 				<sphereBufferGeometry args={args} />
 				<meshStandardMaterial
