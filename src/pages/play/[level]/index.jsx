@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import ResetButton from "../../../atoms/reset-button";
 import useTransientSession from "../../../ions/hooks/use-transient-session";
 import { levelCount } from "../../../ions/levels";
+import MobileControls from "../../../ions/mobile-controls";
 import PlayerControls from "../../../ions/player-controls";
 import useStore from "../../../ions/store";
 import UiControls from "../../../ions/ui-controls";
@@ -39,7 +40,13 @@ const Page = () => {
 			</Head>
 			{/*<DebugPanel />*/}
 			{gameState === "running" ? <PlayerControls /> : <UiControls />}
-			<Canvas shadows className="canvas" camera={{ position: [0, 0, 25] }}>
+			<MobileControls />
+			<Canvas
+				shadows
+				className="canvas"
+				camera={{ position: [0, 0, 25] }}
+				style={{ userSelect: "none" }}
+			>
 				<color attach="background" args={["black"]} />
 				<Level router={router} />
 			</Canvas>
