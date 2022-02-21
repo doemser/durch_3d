@@ -1,4 +1,3 @@
-import { Global } from "@emotion/react";
 import { Canvas } from "@react-three/fiber";
 import Head from "next/head";
 import { useRouter } from "next/router";

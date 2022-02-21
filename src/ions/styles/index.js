@@ -1,5 +1,6 @@
 import { css, Global } from "@emotion/react";
 import React from "react";
+import { colorPalette } from "./color-palette";
 
 export const lockScroll = css`
 	html,
@@ -61,3 +62,6 @@ export const globalFonts = css`
 `;
 
 export const lockScrollStyles = <Global styles={lockScroll} />;
+export const myFonts = <Global styles={globalFonts} />;
+export const normalizeStyles = <Global styles={globalStyle} />;
+export const paletteStyles = <Global styles={colorPalette} />;
