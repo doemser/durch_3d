@@ -14,6 +14,7 @@ const ResetButton = () => {
 			onClick={() => {
 				router.push("/play/0");
 				setGameState("lose");
+				setGameState("waiting");
 				setOverallStats("restart");
 				resetMoves();
 			}}

@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import Head from "next/head";
 import StyledImage from "../../atoms/image";
@@ -12,6 +13,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+
+const white = { color: "var(--white)" };
 
 const Page = () => {
 	useTransientSession();
@@ -31,32 +34,61 @@ const Page = () => {
 					content="a little game about shooting through"
 				/>
 			</Head>
-			<h1>DURCH</h1>
+			<Typography
+				variant="h4"
+				component="h1"
+				style={{ textAlign: "center", color: "var(--player-color)", paddingTop: "20px" }}
+			>
+				DURCH
+			</Typography>
+			<Typography
+				variant="h6"
+				component="h2"
+				style={{ textAlign: "center", color: "var(--white)" }}
+			>
+				LEADERBOARD
+			</Typography>
 			<TableContainer component={Paper}>
-				<Table aria-label="durch leaderboard">
+				<Table aria-label="durch leaderboard" sx={{ background: "var(--black)" }}>
 					<TableHead>
 						<TableRow>
-							<TableCell>#</TableCell>
-							<TableCell align="center" />
-							<TableCell align="center">Name</TableCell>
-							<TableCell align="center">Score</TableCell>
-							<TableCell align="center">Moves</TableCell>
-							<TableCell align="center">Deaths</TableCell>
+							<TableCell sx={white}>#</TableCell>
+							<TableCell align="center" sx={white} />
+							<TableCell align="left" sx={white}>
+								Name
+							</TableCell>
+							<TableCell align="center" sx={white}>
+								Score
+							</TableCell>
+							<TableCell align="center" sx={white}>
+								Moves
+							</TableCell>
+							<TableCell align="center" sx={white}>
+								Deaths
+							</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
 						{highscores.map((highscore, index) => (
 							<TableRow key={highscore.user}>
-								<TableCell component="th" scope="row">
+								<TableCell component="th" scope="row" sx={white}>
 									{index + 1}
 								</TableCell>
-								<TableCell align="center" sx={{ padding: "0" }}>
+								<TableCell align="center" sx={white}>
 									<StyledImage width={35} height={35} src={highscore.image} />
 								</TableCell>
-								<TableCell align="center">{highscore.name}</TableCell>
-								<TableCell align="center">{highscore.score}</TableCell>
-								<TableCell align="center">{highscore.moves}</TableCell>
-								<TableCell align="center">{highscore.deaths}</TableCell>
+								<TableCell align="left" sx={white}>
+									{highscore.name}
+								</TableCell>
+								<TableCell align="center" sx={white}>
+									{highscore.score}
+								</TableCell>
+								<TableCell align="center" sx={white}>
+									{highscore.moves}
+								</TableCell>
+								<TableCell align="center" sx={white}>
+									{highscore.deaths}
+								</TableCell>
 							</TableRow>
 						))}
 					</TableBody>
