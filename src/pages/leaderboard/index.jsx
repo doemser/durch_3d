@@ -13,6 +13,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import SvgIcon from "../../atoms/svg-icon";
 
 const white = { color: "var(--white)" };
 
@@ -52,27 +53,29 @@ const Page = () => {
 				<Table aria-label="durch leaderboard" sx={{ background: "var(--black)" }}>
 					<TableHead>
 						<TableRow>
-							<TableCell sx={white}>#</TableCell>
+							<TableCell sx={white} align="center">
+								<SvgIcon type="trophy" />
+							</TableCell>
 							<TableCell align="center" sx={white} />
 							<TableCell align="left" sx={white}>
-								Name
+								<SvgIcon type="user" />
 							</TableCell>
 							<TableCell align="center" sx={white}>
-								Score
+								<SvgIcon type="score" />
 							</TableCell>
 							<TableCell align="center" sx={white}>
-								Moves
+								<SvgIcon type="moves" />
 							</TableCell>
 							<TableCell align="center" sx={white}>
-								Deaths
+								<SvgIcon type="deaths" />
 							</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
 						{highscores.map((highscore, index) => (
 							<TableRow key={highscore.user}>
-								<TableCell component="th" scope="row" sx={white}>
-									{index + 1}
+								<TableCell component="th" scope="row" align="center" sx={white}>
+									{index + 1}.
 								</TableCell>
 								<TableCell align="center" sx={white}>
 									<StyledImage width={35} height={35} src={highscore.image} />
