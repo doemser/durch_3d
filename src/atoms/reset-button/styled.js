@@ -9,6 +9,7 @@ const StyledResetButton = styled.div`
 	justify-content: center;
 	width: 60px;
 	height: 60px;
+	transition: background 0.5s;
 	border: none;
 	border-radius: 50%;
 	background: var(--player-color);
