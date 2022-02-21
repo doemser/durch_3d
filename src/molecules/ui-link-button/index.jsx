@@ -4,7 +4,11 @@ import UiButtonText from "../../atoms/ui-button-text";
 import useStore from "../../ions/store";
 
 const UiLinkButton = ({ children, position, rotation, args, router, type, url }) => {
+	const gameState = useStore.getState().gameState;
+	const level = useStore.getState().level;
 	const setOverallStats = useStore(state => state.setOverallStats);
+	const setGameState = useStore.getState().setGameState;
+	const resetMoves = useStore.getState().resetMoves;
 	const [hovered, setHover] = useState(false);
 	useEffect(() => {
 		document.body.style.cursor = hovered ? "pointer" : "auto";
@@ -29,6 +33,12 @@ const UiLinkButton = ({ children, position, rotation, args, router, type, url })
 						case "restart":
 							router.push(url);
 							setOverallStats("restart");
+							break;
+						case "nextlevel":
+							router.push(`${url}/${parseInt(level) + 1}`);
+							setGameState("waiting");
+							setOverallStats(gameState);
+							resetMoves();
 							break;
 						case "extern":
 							window.open(url, `_blank`);

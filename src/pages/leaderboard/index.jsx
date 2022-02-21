@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import StyledImage from "../../atoms/image";
+import ResetButton from "../../atoms/reset-button";
 import useStore from "../../ions/store";
 import Layout from "../../organisms/layout";
 import useTransientSession from "../../ions/hooks/use-transient-session";
@@ -61,6 +62,7 @@ const Page = () => {
 					</TableBody>
 				</Table>
 			</TableContainer>
+			<ResetButton />
 		</Layout>
 	);
 };

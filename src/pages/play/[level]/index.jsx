@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
+import ResetButton from "../../../atoms/reset-button";
 import useTransientSession from "../../../ions/hooks/use-transient-session";
 import { levelCount } from "../../../ions/levels";
 import PlayerControls from "../../../ions/player-controls";
@@ -14,6 +15,7 @@ import Level from "../../../organisms/level";
 const Page = () => {
 	useTransientSession();
 	const gameState = useStore(state => state.gameState);
+	const router = useRouter();
 	const {
 		query: { level },
 	} = useRouter();
@@ -39,8 +41,9 @@ const Page = () => {
 			{gameState === "running" ? <PlayerControls /> : <UiControls />}
 			<Canvas shadows className="canvas" camera={{ position: [0, 0, 25] }}>
 				<color attach="background" args={["black"]} />
-				<Level />
+				<Level router={router} />
 			</Canvas>
+			<ResetButton />
 		</Layout>
 	);
 };
