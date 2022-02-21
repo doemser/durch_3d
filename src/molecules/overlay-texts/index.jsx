@@ -51,7 +51,7 @@ const OverlayTexts = ({ gameState, router }) => {
 					type="nextlevel"
 					url="/play"
 				>
-					next Level
+					next level
 				</UiLinkButton>
 			) : null}
 		</>
