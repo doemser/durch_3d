@@ -11,7 +11,7 @@ const RankInfo = ({ session }) => {
 		<StyledRankInfo>
 			<span>
 				<SvgIcon type="trophy" />
-				{check > 0 ? `#${check + 1}` : "#-"}
+				{check > -1 ? `#${check + 1}` : "#-"}
 			</span>
 		</StyledRankInfo>
 	);
