@@ -36,16 +36,9 @@ const Page = () => {
 				/>
 			</Head>
 			<Typography
-				variant="h4"
-				component="h1"
-				style={{ textAlign: "center", color: "var(--player-color)", paddingTop: "20px" }}
-			>
-				DURCH
-			</Typography>
-			<Typography
 				variant="h6"
 				component="h2"
-				style={{ textAlign: "center", color: "var(--white)" }}
+				style={{ textAlign: "center", color: "var(--white)", marginTop: "75px" }}
 			>
 				LEADERBOARD
 			</Typography>

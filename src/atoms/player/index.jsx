@@ -78,7 +78,6 @@ const Player = ({ position, args, speed, color, metalness, roughness, router }) 
 	return (
 		<group ref={ref}>
 			{build ? null : <PerspectiveCamera makeDefault position={[0, 0, 25]} />}
-			<GameTitle fontSize="0.6" titlePosition={[0, 8.4, 6]} subTitlePosition={[0, 20, 4]} />
 			<OverlayTexts gameState={gameState} router={router} />
 			<mesh ref={playerMesh} castShadow receiveShadow>
 				<sphereBufferGeometry args={args} />

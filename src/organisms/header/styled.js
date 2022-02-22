@@ -8,9 +8,10 @@ const StyledHeader = styled.header`
 	right: 0;
 	align-items: center;
 	justify-content: center;
+	width: 100%;
 	height: 50px;
-	margin-top: 5px;
 	padding: 10px;
+	text-align: center;
 `;
 
 export default StyledHeader;

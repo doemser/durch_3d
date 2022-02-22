@@ -10,6 +10,9 @@ export const colors = {
 	primaryDark: "#130f40",
 	primaryContrastText: "#fff",
 	secondaryContrastText: "#000",
+	accentColorOne: "#800080",
+	accentColorTwo: "#FFA500",
+	accentColorThree: "#22a6b3",
 };
 
 export const colorPalette = css`
@@ -22,5 +25,8 @@ export const colorPalette = css`
 		--primary-dark: ${colors.primaryDark};
 		--primary-contrast-text: ${colors.primaryContrastText};
 		--secondary-contrast-text: ${colors.secondaryContrastText};
+		--accent-color-one: ${colors.accentColorOne};
+		--accent-color-two: ${colors.accentColorTwo};
+		--accent-color-three: ${colors.accentColorThree};
 	}
 `;
