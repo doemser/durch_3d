@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import StyledImage from "../../atoms/image";
 
 import StyledHeader from "./styled";
@@ -7,15 +7,27 @@ import StyledButton from "../../atoms/button/styled";
 
 const Header = () => {
 	const { data: session } = useSession();
+	const [menu, setMenu] = useState(false);
 
 	return (
 		<StyledHeader>
 			{session ? (
 				<>
-					<StyledButton type="button" onClick={() => signOut()}>
-						logout
-					</StyledButton>
-					<StyledImage width={40} height={40} src={session.user.image} />
+					{menu ? (
+						<StyledButton type="button" onClick={() => signOut()}>
+							logout
+						</StyledButton>
+					) : null}
+
+					<StyledImage
+						cursor="pointer"
+						width={40}
+						height={40}
+						src={session.user.image}
+						onClick={() => {
+							setMenu(!menu);
+						}}
+					/>
 				</>
 			) : (
 				<StyledButton type="button" onClick={() => signIn()}>
