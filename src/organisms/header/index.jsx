@@ -18,7 +18,7 @@ const Header = () => {
 					<StyledImage width={40} height={40} src={session.user.image} />
 				</>
 			) : (
-				<StyledButton type="button" onClick={() => signIn("github")}>
+				<StyledButton type="button" onClick={() => signIn()}>
 					sign in
 				</StyledButton>
 			)}
