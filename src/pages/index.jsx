@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import Head from "next/head";
+import useStore from "../ions/store";
 import { lockScrollStyles } from "../ions/styles";
 import Layout from "../organisms/layout";
 import Lights from "../molecules/lights";
@@ -12,6 +13,9 @@ import useTransientSession from "../ions/hooks/use-transient-session";
 const Page = () => {
 	useTransientSession();
 	const router = useRouter();
+	useEffect(() => {
+		useStore.getState().getHighscores();
+	}, []);
 
 	return (
 		<Layout>

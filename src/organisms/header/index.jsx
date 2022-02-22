@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import StyledImage from "../../atoms/image";
-
+import RankInfo from "../../molecules/rank-info";
 import StyledHeader from "./styled";
 import { useSession, signIn, signOut } from "next-auth/react";
 import StyledButton from "../../atoms/button/styled";
@@ -28,6 +28,7 @@ const Header = () => {
 							setMenu(!menu);
 						}}
 					/>
+					<RankInfo session={session} />
 				</>
 			) : (
 				<StyledButton type="button" onClick={() => signIn()}>

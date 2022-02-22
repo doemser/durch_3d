@@ -9,6 +9,7 @@ const StyledHeader = styled.header`
 	align-items: center;
 	justify-content: center;
 	height: 50px;
+	margin-top: 5px;
 	padding: 10px;
 `;
 
