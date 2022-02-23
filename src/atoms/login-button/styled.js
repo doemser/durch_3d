@@ -23,7 +23,7 @@ const StyledLoginButton = styled.button`
 	${({ type, menu }) => {
 		return ` ${
 			type === "logout"
-				? `right: ${menu ? "30px" : "-100px"};
+				? `right: ${menu ? "40px" : "-100px"};
 		transform: ${menu ? "rotate(-15deg);" : "rotate(0deg)"};`
 				: `right: 10px; transform: rotate(0deg);`
 		}

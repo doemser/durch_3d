@@ -1,18 +1,22 @@
+import { useRouter } from "next/router";
 import React from "react";
+import CurrentRank from "../../atoms/current-rank";
 import SvgIcon from "../../atoms/svg-icon";
-import useStore from "../../ions/store";
 import StyledRankInfo from "./styled";
 
-const RankInfo = ({ session }) => {
-	const highscores = useStore(state => state.highscores);
-	const check = highscores.findIndex(e => e.user === session.user.id);
+const RankInfo = ({ session = false }) => {
+	const router = useRouter();
 
 	return (
-		<StyledRankInfo>
+		<StyledRankInfo
+			onClick={() => {
+				router.push("/leaderboard");
+			}}
+		>
 			<span>
 				<SvgIcon type="trophy" color="var(--accent-color-two)" />
-				{check > -1 ? `#${check + 1}` : "?"}
 			</span>
+			{session ? <CurrentRank session={session} /> : null}
 		</StyledRankInfo>
 	);
 };

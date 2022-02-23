@@ -10,14 +10,6 @@ const OverlayTexts = ({ gameState, router }) => {
 	const overallStats = useStore(state => state.overallStats);
 	return (
 		<>
-			<Text position={[0, 7.9, 6]} fontSize={0.35} color={colors.primaryContrastText}>
-				{overallStats.levels}/{levels.length - 1}
-			</Text>
-			<Text position={[0, 7.4, 6]} fontSize={0.4} color={colors.primaryContrastText}>
-				moves: {overallStats.moves}
-				{"  "}|{"  "}deaths: {overallStats.deaths}
-			</Text>
-
 			<Text position={[0, 1, 6]} fontSize={0.8} color={colors.primaryContrastText}>
 				{gameState === "win" ? `passed!` : gameState === "lose" ? "failed!" : ""}
 			</Text>
