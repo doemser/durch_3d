@@ -11,7 +11,7 @@ const Footer = () => {
 	const {
 		query: { level },
 	} = useRouter();
-	//const
+
 	return (
 		<StyledFooter>
 			{level ? (
@@ -19,11 +19,11 @@ const Footer = () => {
 					variant="h4"
 					sx={{
 						position: "absolute",
-						bottom: "50px",
+						bottom: 50,
 					}}
 				>
 					{moves}
-					<SvgIcon type="arrow" deg={direction > 0 ? "0" : "90"} />
+					<SvgIcon type="arrow" deg={direction > 0 ? 0 : 90} />
 				</Typography>
 			) : null}
 		</StyledFooter>
