@@ -6,7 +6,11 @@ import GameTitle from "../../molecules/game-title";
 const MainMenu = ({ router }) => {
 	return (
 		<UiBackground>
-			<GameTitle titlePosition={[0, 7, 1]} subTitlePosition={[0, 5.5, 1]} fontSize={2.5} />
+			<GameTitle
+				titlePosition={[0, 7, 0.3]}
+				subTitlePosition={[0, 5.5, 0.3]}
+				fontSize={2.5}
+			/>
 			<UiLinkButton
 				args={[8, 3, 1]}
 				position={[0, 2, 0]}

@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
 
-const StyledHeader = styled.header`
+const StyledFooter = styled.footer`
 	display: flex;
 	position: fixed;
 	z-index: 1;
-	top: 0;
 	right: 0;
+	bottom: 0;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
@@ -14,4 +14,4 @@ const StyledHeader = styled.header`
 	text-align: center;
 `;
 
-export default StyledHeader;
+export default StyledFooter;

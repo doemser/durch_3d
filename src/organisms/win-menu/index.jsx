@@ -26,9 +26,17 @@ const WinMenu = ({ router }) => {
 		}
 	}, []);
 
+	useEffect(() => {
+		useStore.getState().getHighscores();
+	}, []);
+
 	return (
 		<UiBackground>
-			<GameTitle titlePosition={[0, 7, 1]} subTitlePosition={[0, 5.5, 1]} fontSize={2.5} />
+			<GameTitle
+				titlePosition={[0, 7, 0.3]}
+				subTitlePosition={[0, 5.5, 0.3]}
+				fontSize={2.5}
+			/>
 
 			{overallStats.levels === levels.length ? (
 				<>

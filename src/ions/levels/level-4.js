@@ -78,7 +78,7 @@ createLevel({
 			args: [10.5, 2, 1],
 			rotation: [0.04, 0.6, 0],
 			axis: [null, null, { direction: 1, speed: 2 }],
-			color: "#f0932b",
+			color: colors.accentColorTwo,
 			metalness: "0.3",
 			roughness: "0.5",
 			id: "02aaa9fa-6ba3-4d3e-9f0a-3a5c6f3ac37d",

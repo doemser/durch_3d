@@ -1,10 +1,13 @@
 import styled from "@emotion/styled";
 
 const StyledRankInfo = styled.div`
-	position: fixed;
-	top: 0;
+	position: absolute;
 	left: 0;
 	margin: 10px;
+
+	&:hover {
+		cursor: pointer;
+	}
 `;
 
 export default StyledRankInfo;

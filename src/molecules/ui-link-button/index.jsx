@@ -48,16 +48,12 @@ const UiLinkButton = ({ children, position, rotation, args, router, type, url })
 			>
 				<boxGeometry args={args} />
 				<meshStandardMaterial
-					color={hovered ? colors.playerColor : colors.primaryDark}
+					color={hovered ? colors.primaryDark : colors.black}
 					metalness="0.2"
 					roughness="0"
 				/>
 			</mesh>
-			<UiButtonText
-				position={position}
-				args={args}
-				color={hovered ? colors.secondaryContrastText : colors.primaryContrastText}
-			>
+			<UiButtonText position={position} args={args} color={colors.primaryContrastText}>
 				{children}
 			</UiButtonText>
 		</group>

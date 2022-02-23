@@ -1,11 +1,10 @@
-import React, { useEffect, useRef } from "react";
-import { useFrame, useLoader } from "@react-three/fiber";
-import useStore from "../../ions/store";
 import { useSphere } from "@react-three/cannon";
 import { PerspectiveCamera } from "@react-three/drei";
-import OverlayTexts from "../../molecules/overlay-texts";
+import { useFrame, useLoader } from "@react-three/fiber";
+import React, { useEffect, useRef } from "react";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
-import GameTitle from "../../molecules/game-title";
+import useStore from "../../ions/store";
+import OverlayTexts from "../../molecules/overlay-texts";
 
 const Player = ({ position, args, speed, color, metalness, roughness, router }) => {
 	const setGameState = useStore.getState().setGameState;
@@ -78,7 +77,6 @@ const Player = ({ position, args, speed, color, metalness, roughness, router }) 
 	return (
 		<group ref={ref}>
 			{build ? null : <PerspectiveCamera makeDefault position={[0, 0, 25]} />}
-			<GameTitle fontSize="0.6" titlePosition={[0, 8.4, 6]} subTitlePosition={[0, 20, 4]} />
 			<OverlayTexts gameState={gameState} router={router} />
 			<mesh ref={playerMesh} castShadow receiveShadow>
 				<sphereBufferGeometry args={args} />
