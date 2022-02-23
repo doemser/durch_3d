@@ -6,21 +6,21 @@ const UiNavigationButtons = ({ router }) => {
 		<>
 			<UiLinkButton
 				args={[8, 2.5, 1]}
-				position={[4.2, -6.5, 0]}
-				router={router}
-				type="restart"
-				url="/play/0"
-			>
-				try again
-			</UiLinkButton>
-			<UiLinkButton
-				args={[8, 2.5, 1]}
-				position={[-4.2, -6.5, 0]}
+				position={[0, -3.8, 0]}
 				router={router}
 				type="restart"
 				url="/leaderboard"
 			>
 				leaderboard
+			</UiLinkButton>
+			<UiLinkButton
+				args={[5, 2.5, 0.6]}
+				position={[0, -7.7, 0]}
+				router={router}
+				type="restart"
+				url="/play/0"
+			>
+				try again
 			</UiLinkButton>
 		</>
 	);

@@ -7,7 +7,7 @@ import Lights from "../../molecules/lights";
 import Map from "../../molecules/map";
 import Goal from "../../atoms/goal";
 import useStore from "../../ions/store";
-import LevelText from "../../atoms/level-text";
+import LevelText from "../../atoms/level-text/level-text";
 
 const Level = ({ router }) => {
 	const level = useStore(state => state.level);

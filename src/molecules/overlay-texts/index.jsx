@@ -19,7 +19,7 @@ const OverlayTexts = ({ gameState, router }) => {
 			{gameState === "win" ? (
 				<UiLinkButton
 					args={[4, 1.5, 0.5]}
-					position={[0, -1.5, 3]}
+					position={[0, 0, 3]}
 					router={router}
 					type="nextlevel"
 					url="/play"
