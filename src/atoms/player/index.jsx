@@ -1,11 +1,10 @@
-import React, { useEffect, useRef } from "react";
-import { useFrame, useLoader } from "@react-three/fiber";
-import useStore from "../../ions/store";
 import { useSphere } from "@react-three/cannon";
 import { PerspectiveCamera } from "@react-three/drei";
-import OverlayTexts from "../../molecules/overlay-texts";
+import { useFrame, useLoader } from "@react-three/fiber";
+import React, { useEffect, useRef } from "react";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
-import GameTitle from "../../molecules/game-title";
+import useStore from "../../ions/store";
+import OverlayTexts from "../../molecules/overlay-texts";
 
 const Player = ({ position, args, speed, color, metalness, roughness, router }) => {
 	const setGameState = useStore.getState().setGameState;

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-const StyledFooter = styled.header`
+const StyledFooter = styled.footer`
 	display: flex;
 	position: fixed;
 	z-index: 1;
@@ -12,7 +12,6 @@ const StyledFooter = styled.header`
 	height: 50px;
 	padding: 10px;
 	text-align: center;
-	_background: pink;
 `;
 
 export default StyledFooter;
