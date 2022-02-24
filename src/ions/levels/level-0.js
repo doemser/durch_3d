@@ -2,6 +2,7 @@ import { createLevel } from "./levels";
 import { colors } from "../styles/color-palette";
 
 createLevel({
+	wallTexts: ["don´t panic.. keep calm.", "hold to go down, release to go up"],
 	levelNumber: {
 		position: [-9, 1, -1.3],
 		color: colors.black,

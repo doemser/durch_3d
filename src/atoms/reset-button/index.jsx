@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 import SvgIcon from "../svg-icon";
-import StyledResetButton from "./styled";
+import StyledRoundButton from "../round-button/styled";
 import useStore from "../../ions/store";
 
 const ResetButton = () => {
@@ -10,8 +10,8 @@ const ResetButton = () => {
 	const resetMoves = useStore(state => state.resetMoves);
 	const router = useRouter();
 	return (
-		<StyledResetButton
-			type="button"
+		<StyledRoundButton
+			type="reset"
 			onClick={() => {
 				router.push("/play/0");
 				setGameState("lose");
@@ -21,7 +21,7 @@ const ResetButton = () => {
 			}}
 		>
 			<SvgIcon type="restart" />
-		</StyledResetButton>
+		</StyledRoundButton>
 	);
 };
 
