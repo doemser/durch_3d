@@ -1,9 +1,8 @@
 import styled from "@emotion/styled";
 
-const StyledResetButton = styled.div`
+const StyledRoundButton = styled.div`
 	display: flex;
 	position: fixed;
-	right: 25px;
 	bottom: 25px;
 	align-items: center;
 	justify-content: center;
@@ -12,7 +11,6 @@ const StyledResetButton = styled.div`
 	transition: background 0.5s;
 	border: none;
 	border-radius: 50%;
-	background: var(--player-color);
 	box-shadow: 0 0 20px 0 black;
 	color: var(--primary-contrast-text);
 	text-align: center;
@@ -24,6 +22,15 @@ const StyledResetButton = styled.div`
 	&:active {
 		background: var(--primary-main);
 	}
+
+	${({ type }) => {
+		switch (type) {
+			case "reset":
+				return `right: 25px; background: var(--player-color);`;
+			case "control":
+				return `left: 25px; background: var(--black);`;
+		}
+	}}
 `;
 
-export default StyledResetButton;
+export default StyledRoundButton;

@@ -70,7 +70,7 @@ const Page = () => {
 								<TableCell component="th" scope="row" align="center" sx={white}>
 									{index + 1}.
 								</TableCell>
-								<TableCell align="center" sx={white}>
+								<TableCell align="center" sx={{ padding: 0 }}>
 									<StyledImage width={35} height={35} src={highscore.image} />
 								</TableCell>
 								<TableCell align="left" sx={white}>

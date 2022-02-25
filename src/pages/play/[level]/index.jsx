@@ -10,6 +10,7 @@ import PlayerControls from "../../../ions/player-controls";
 import useStore from "../../../ions/store";
 import { lockScrollStyles } from "../../../ions/styles";
 import UiControls from "../../../ions/ui-controls";
+import ControlsPanel from "../../../organisms/controls-panel";
 import Layout from "../../../organisms/layout";
 import Level from "../../../organisms/level";
 //import DebugPanel from "../../../molecules/debug/texts";
@@ -47,6 +48,7 @@ const Page = () => {
 				<color attach="background" args={["black"]} />
 				<Level router={router} />
 			</Canvas>
+			<ControlsPanel />
 			<ResetButton />
 		</Layout>
 	);
